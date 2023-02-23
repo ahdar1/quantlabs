@@ -72,6 +72,8 @@ Why not try and explore the new variable you just created? (e.g., report mean, s
 
 ## Video
 
+[Boxplot](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=e8b97ce8-7b60-4344-8a42-ac8c00fa05fc)
+
 [Reliability analysis](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=0213e35a-95a5-46da-a39b-ac8c01036a34)
 
 ## Readings
