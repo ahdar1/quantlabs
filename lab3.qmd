@@ -182,6 +182,14 @@ Looking at the descriptive statistics and statistical results, we can conclude t
 Why not investigating if there are differences in the satisfaction level between those who are willing to participate in Dell loyalty program and those who are not.
 :::
 
+## Video
+
+[One-sample T-test](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=e0c9c7c6-9576-45fd-9094-acab0114a359)
+
+[Two independent samples T-test](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=95a76df2-502e-4267-8a46-acab010a11ac)
+
+[Crosstabs](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=888c210d-d357-4207-9736-acab0129b6c6)
+
 ## Readings
 
 Feick, L. F., & Price, L. L. (1987). The market maven: A diffuser of marketplace information. *Journal of Marketing*, 51(1), 83-97.

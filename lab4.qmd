@@ -107,3 +107,11 @@ What do you think about the potential managerial implications of the above findi
 ## Learning Experimentation from Published Research
 
 You can learn experimentation from published research. You can even replicate results of published studies as more authors nowadays made their data publicly available as a way to increase research transparency. Open Science Forum <https://osf.io> facilitates such initiatives. You can click this [link](https://osf.io/j6bns) or this [link](https://osf.io/tjgma/?view_only=d9cb35f5c1984edaac208aa90a072ec5) as examples of such documentation.
+
+## Video
+
+[Lecture Week 15 on Experimentation](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=4b6ee74f-4aae-4b7f-aa3b-af9c006b039e)
+
+[One-way ANOVA](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=4f7d12dd-f094-46c6-8905-acab010a1756)
+
+[Analyzing data from two-way ANOVA](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=d3d18d3d-b867-4772-8123-ac9001049583)

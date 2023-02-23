@@ -70,6 +70,10 @@ The alpha value for Opinion Leadership is 0.927 and therefore the three items ca
 Why not try and explore the new variable you just created? (e.g., report mean, standard deviation, inspect the shape of its distribution, create a boxplot)
 :::
 
+## Video
+
+[Reliability analysis](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=0213e35a-95a5-46da-a39b-ac8c01036a34)
+
 ## Readings
 
 Feick, L. F., & Price, L. L. (1987). The market maven: A diffuser of marketplace information. *Journal of Marketing*, 51(1), 83-97.
