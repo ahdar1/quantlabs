@@ -1,0 +1,184 @@
+# Mediation Analysis (Extra) {#sec-lab6}
+
+Data: RobotGLP.sav
+
+-   Data is available on [Moodle](https://modules.lancaster.ac.uk/course/view.php?id=35502#section-6)
+
+## Learning objectives
+
+This is an extra lab exercise that you do on your own time.
+
+The aim of this lab is to help you to use SPSS to conduct mediation analysis.
+
+Learning objectives:
+
+At the end of this lab, I hope that you will
+
+-   Understand the concept of mediation.
+
+-   Understand the meaning of total effect, direct effect and indirect effect.
+
+-   Understand the Baron and Kenny's procedure in examining mediation effect and its limitation.
+
+-   Know how to use SPSS and interpret its outputs in mediation analysis.
+
+-   Know how to test a mediation model using Process macro.
+
+## The Model
+
+We start with the following model where consumers' environmental concerns (`EC`) is hypothesized to explain their intentions to join a green loyalty program (`Intention`).
+
+![Simple linear model](images/lab6_model1.png "Simple linear regression model"){#fig-slr fig-align="center" width="90%"}
+
+and the model in @fig-med with anticipated guilt (`Guilt`) being added.
+
+![Mediation model](images/lab6_model2.png){#fig-med fig-align="center" width="90%"}
+
+::: callout-note
+## Task
+
+From the two figures above, identify the independent variable, dependent variable, and mediator variable?
+:::
+
+::: callout-note
+## Task: Fill in the blank
+
+If c in @fig-slr is the regression estimate that explains the impact of `EC` on `Intention`.
+
+Write down the simple linear regression equation: .......... (**Model 1**).
+:::
+
+::: callout-note
+## Task: Fill in the blanks
+
+From Figure @fig-med, write down regression equations that relate:
+
+1.  `Guilt` with `EC`: .......... (**Model 2**)
+
+2.  `Intention` with both `EC` and `Guilt`: .......... (**Model 3**)
+:::
+
+::: callout-note
+## Task: Fill in the blanks
+
+Identify
+
+1\. Total effect: .........
+
+2\. Direct effect: ..........
+
+3\. Indirect/mediated effect: .........., which is equal to c-c'.
+
+Thus, Total effect = .......... + ..........
+:::
+
+In this lab, we are going to use Baron and Kenny's procedure (1986)[^lab6-1] in examining the mediation effect. Note that nowadays this procedure loses its popularity in academic research because of its limitations. For example, the procedure assumes that the total effect of X on Y should be significant in the first place before proceeding to testing whether M affects the relationship. However, given this limitation, it is still important to appreciate this technique as it provides a basic understanding of a simple mediation model. Furthermore, in many cases, when mediation exists, the total effect of X on Y is significant.
+
+[^lab6-1]: Baron, Reuben M and David A. Kenny. 1986. The Moderator-mediator variable distinction in social psychological research: Conceptual strategic and statistical considerations. Journal of Personality and Social Psychology. 51(6), 1173-1182
+
+::: callout-note
+## Task: Fill in the blanks
+
+Given the models above, following the BK's procedure, there are three sets of preconditions that must be satisfied in mediation analysis, namely:
+
+1.  EC has a significant effect on .........
+
+2.  EC support has a significant effect on .........
+
+3.  Guilt has a significant effect on Intention when controlling for the effect of .........
+:::
+
+::: callout-note
+## Task: Fill in the blanks
+
+To investigate the three preconditions in the previous task, we use regression analysis, in which:
+
+Precondition 1 is tested via running a regression model as seen in Figure .....
+
+Precondition 2 is tested via running a regression model as seen in Figure .....
+
+Precondition 3 is tested via running a regression model as seen in Figure .....
+:::
+
+::: callout-note
+## Task
+
+Use SPSS to check for the above preconditions. Insert regression standardized estimates and their standard errors replacing the question marks into the figures below and put asterisk next to it if the coefficients are significant (e.g., 0.32(0.12)**,** p\<0.05. 0.32 is a standardized estimate and 0.12 is a standard error and the coefficient is significant because its p-value is less than 0.05).
+
+![Replace the question marks with numbers](images/lab6_model3.png){fig-align="center" width="90%"}
+:::
+
+## Sobel's test
+
+Next, to assess whether mediation effect is significant, Baron and Kenny (1986) recommended researchers to directly assess whether the product $a*b$ is significant by using a Sobel's test.
+
+Use the online Sobel's test by clicking this link <http://quantpsy.org/sobel/sobel.htm>. To implement the Sobel's test, you need to use the **unstandardized** estimates and their **standard errors**. But before inputting numbers into the above website, please put the necessary information in the table below:
+
+:::callout-note
+##Task: Fill in the blanks
+
+| Unstandardized estimate | Standard error |
+|-------------------------|----------------|
+| $a$ =                   | $S_a$ =        |
+| $b$ =                   | $S_b$ =        |
+
+Now, run the Sobel's test.
+
+What do you conclude??
+:::
+
+The Sobel's test assumes that the path coefficients a, b to be normally distributed but the product a\*b need not normally distributed. Because of this reason researchers abandon this test and opt for a modern method of testing mediation explained in the next section.
+
+## Using Process Macro (additional)
+
+Go to this website <http://processmacro.org/download.html>, and download the Process macro, and install it onto your SPSS. The procedure of installing the macro is the same the one you did before when installing my heteroskedasticityV3 macro in the previous lab. So, if you managed to install my macro, you should be able to install this macro easily.
+
+We are going to use this macro to test our mediation model. By using this macro, you do not need to follow the three steps procedure suggested by Baron and Kenny (1986). The macro implements what a so called 'Bootstrapping' technique. Bootstrapping is a resampling technique where your data is treated as a population, and the macro keeps taking samples from your data with replacement according a pre-specified number (the default of the program is 5000 samples). For each sample, the macro computes $a$, $b$, and the product $a*b$. Therefore, by having 5000 samples, there would be 5000 values of product $a*b$. Using these 5000 values of the product $a*b$, the macro calculates the confidence interval for the product $a*b$ -- it is called a bootstrap confidence interval. **If the interval does not include zero, the mediation effect is significant**.
+
+::: callout-tip
+By default, the Process macros set the level of bootstrap confidence at 95% level. You can change this value but 95% is commonly used, therefore, leave the default as it is.
+
+For example, if the 95% bootstrap confidence interval for the size of the mediation effect is \[0.04;0.25\]. This means that we are 95% confident that the effect lies from 0.04 to 0.25.
+:::
+
+::: callout-important
+If the bootstrap confidence interval includes zero, the mediation effect is **not** significant.
+
+For example, if the confidence interval is \[-0.3; 0.2\], the mediation effect is not significant.
+:::
+
+### Running the Process Macro
+
+-   Click **Analyze**$\rightarrow$**Regression**$\rightarrow$**Process**
+
+-   Insert `Intent` into `Y-variable` box.
+
+-   Insert 'EC`into`X-variable\` box.
+
+-   Insert 'Guilt' into 'Mediators(M)' box.
+
+-   Change `Model number` to 4.
+
+-   If you manage to follow these steps, on your SPSS screen, you should see the figure below
+
+-   Click `OK` -- inspect the outputs.
+
+![Process Macro](images/lab6_process_win.png){fig-align="center" width="90%"}
+
+### Outputs
+
+Inspect the outputs. The most important output to look at is the last part of the outputs -- see @fig-processout. It gives you the size of the mediation effect ($a*b=0.133$), and the lower and upper limit of the bootstrap confidence interval (0.04; 0.25). Because the 95% bootstrap confidence interval does not include zero, the mediation effect is significant.
+
+![Last part of the Process macro's outputs](images/lab6_process_out.png){#fig-processout fig-align="center" width="90%"}
+
+::: callout-note
+## Task
+
+Look at the other parts of the Process macro's outputs in your SPSS.
+
+I want you to interpret the outputs of the macro in the other blocks, most importantly under
+
+1.  `OUTCOME VARIABLE: Guilt` and
+
+2.  `OUTCOME VARIABLE: Intent`
+:::

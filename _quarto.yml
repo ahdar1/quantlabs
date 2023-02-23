@@ -3,12 +3,20 @@ project:
   output-dir: docs
 
 website:
-  title: "MKTGQ"
+  title: "MKTG402(3)-Workshops on the Introduction to Quantitative Research Methods"
+  sidebar:
+    style: "floating"
+    search: true
+
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - lab1.qmd
+      - lab2.qmd
+      - lab3.qmd
+      - lab4.qmd
+      - lab5.qmd
 
 format:
   html:

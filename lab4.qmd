@@ -1,0 +1,109 @@
+# ANOVA and Experimentation (Week 16) {#sec-lab4}
+
+Data: MBGshort.sav
+
+-   Data is available on [Moodle](https://modules.lancaster.ac.uk/course/view.php?id=35502#section-6)
+
+## Learning objectives
+
+The aim of this lab is to help you to use SPSS to analyze data from an experimentation. Specifically, we want to examine mean differences across three experimental groups (one-way ANOVA design) and analyze data of a more complex experiment (i.e., two-way ANOVA in the form of a 3x2 between-subject design).
+
+Learning objectives: At the end of this lab, we hope that you will be able to
+
+-   Analyze data from a one-way ANOVA (Analysis of Variance) experiment.
+
+-   Produce and interpret basic SPSS outputs from a two-way ANOVA experiment.
+
+In this lab, we are going to look at how one-way ANOVA can be used to extend the two independent samples T test to look for means differences across three or more groups and secondly to show how data resulted from manipulation of more than one factor can be analyzed by extending one-way ANOVA method. For instance, to look at how types of return condition facilitated by money-back guarantees (MBG for short) (No MBG, 15 days, 30 days) and types of product (search vs. experience product) influence perceived product quality. We focus our attention to between-subject ANOVA designs where each respondent is randomly assigned to only one of the experimental conditions.
+
+## Mean Differences Across Three or More Groups
+
+One-way ANOVA can also be used to explore differences in a variable across three or more groups. This is more useful than the two independent sample T test simply because it can be used for more groups and can tell us where the location of the differences. For instance you might find significant mean differences on perceived product quality across three groups (e.g., No MBG, 15 days, and 30 days) and to be more specific, the 15 days and 30 days group do not differ. But perceived product quality of participants in the No MBG group is different than those in the 15 days and 30 days group.
+
+In this part, we are going to use the data collected by a former Advanced Marketing Management student at Lancaster University for his dissertation about the effect of MBG on perceived durability of a product. He created an experiment by devising three different scenarios where each scenarios contains information about each of MBG conditions (No MBG, 15 days, 30 days). Respondents were randomly assigned to read one of three different questionnaires. In each questionnaire, he put an image of a product (he chose a laptop) and information about the MBG condition. Other information across different questionnaires was kept similar (e.g., product specification, laptop price, etc).
+
+![An example of stimulus used in the 30 days MBG condition. This image was created by William, a former AMM student for his MSc dissertation](images/lab4_laptop.png){fig-align="center"}
+
+Let us explore if the difference exist in the perceived product durability across the three groups MBG. We will use quality5 (i.e., 'the product of this offer would be likely to be durable') as the dependent variable.
+
+To conduct an ANOVA, use the menu options **Analyze**$\rightarrow$Compare means$\rightarrow$One-way ANOVA. Click `Options` then tick `Descriptive`. You can also tick **Options**$\rightarrow$means plot to display a graph that shows the means of the three groups Click `Continue` then `OK`. The dependent variable is `quality5` (i.e., 'the product of this offer would be likely to be durable'). The factor is `tMBG`.
+
+In the output window the SPSS produces the Descriptive table and ANOVA table.
+
+![](images/lab4_oneway_des.png)
+
+![](images/lab4_oneway_sig.png)
+
+The ANOVA table reveals that perceived product durability differ across the experimental groups because the sig-value is less than 5%. The descriptive table gives an indication of why the differences exist. No MBG group has a lower mean compared the 15-days and 30-days group. The 15-days and 30-days groups are similar. However, you need to do additional test to get more details about the differences. Let's try again putting some important options.
+
+## Homogeneity of Variance and Post-Hoc Tests
+
+### Homogeneity of Variance Test
+
+Repeat the analysis above and click the `Options` tab. Check on `Options` and tick `Homogeneity of Variance test`. To determine which of the three groups differ, you can do what is called a Post Hoct test - click `Post Hoc`. There are many tests available. Among many options, check `Scheffe` for situation where Equal Variances Assumed; check `Games-Howell` under Equal Variances Not Assumed.
+
+Homogeneity variances test determines whether you would use Scheffe or Games-Howell test. You use this rule:
+
+::: callout-tip
+If sig-value \< 0.05, use Games and Howell, otherwise use Scheffe
+:::
+
+![](images/lab4_oneway_levene.png){fig-align="center"}
+
+The sig-value of the homogeneity of variance test is 0.906, therefore you focus on the outputs of the Scheffe test in the next table. Let us interpret the results of the Scheffe test.
+
+### Post Hoc Test
+
+In the SPSS outputs, you have the following table
+
+![Post Hoc Tests](images/lab4_oneway_posthoc.png){fig-align="center"}
+
+You can see from the above table that No MBG is not statistically different from 15 days (p = 0.08) and 15 days is not statistically different from the 30 days (p = 0.766). But no MBG has a statistical difference with the 30 days (p = 0.013) (the p-value between No MBG and 15 days are close to significant, if sample size is large, it would be likely to be significant). The next output from the Scheffe test below clarifies the difference.
+
+![Homogenous Subsets](images/lab4_oneway_sch_hom.png)
+
+## Two-way ANOVA Experiment
+
+The student thought that the results might not be the same if other product is used. He collected new data but use cloth (i.e, T-shirt) as the focal product. In the data, he created a new variable `tGood` and coded it as 0 for laptop and 1 for cloth.
+
+Laptop is an example of search goods where consumers can fully search for information about the attributes of the product prior to purchase. In contrast, cloth is an example of experience goods where consumers can only acquire limited information without their direct experiences -- to know whether or not a cloth fits you well then you have to wear it!
+
+::: callout-note
+The experiment above can be described in shorthand notation as a 3 (type of MBG: No MBG, 15 days, 30 days) X 2 (type of product: search good vs. experience good) between-subject ANOVA design or 3 X 2 Between-Subjects ANOVA, for short. X is read as "by". Between-subject is another term for randomization, which means that participants were randomly assigned to experimental groups. Because there are two variables being manipulated (type of MBG, type product), in general the design is referred to as a **two-way ANOVA** design.
+:::
+
+::: callout-note
+Because there are two variables being manipulated (type of MBG, type of product), the design is classified as a **two-way ANOVA** design.
+:::
+
+To analyze data from this experiment, use the menu options **Analyze**$\rightarrow$**General Linear Model** $\rightarrow$**Univariate**. Assign `quality5` as the dependent variable and `tMBG` and `tGood` as the independent variables. It would also be useful to plot the relationship between the variables. So click on the plot tab and specify `tMBG` as the horizontal axis and `tGood` as the separate lines. Also in order to see the means for each group you need to click on the `Options` tab and check `Descriptive statistics`. The following tables provide descriptive statistics for each experimental group.
+
+![Cell frequency: This gives the number of respondents within each experimental condition](images/lab4_2way_des.png){fig-align="center"}
+
+![This table provides the mean for each group](images/lab4_2way_des2.png){fig-align="center"}
+
+The most important table is the following table. ![Output](images/lab4_2way_sig.png){fig-align="center" width="80%"}
+
+The previous table tests us if there are differences due to type of MBG condition and type of product under evaluations. It also tells us if there is an interaction between the two factors. We should interpret the sig-value as before, with a sig-value less than 0.05 indicating that there are statistically significant mean differences across levels of factors.
+
+The table shows us that `tMBG` is significant (sig-value=0.006\<0.05). This means that respondents have different perception regarding the durability of the products across the three levels of MBG regardless of product types. `tGood` is not significant (sig-value=0.539), which means that respondents have similar perceptions about the product durability regardless of types of MBG offered. You can say, these situations reflect the presence of the main effect of `tMBG` but not `tGood`.
+
+The most interesting findings from the above table is the sig-value related to the expression tMBG\*tGood, which reflects the interaction effect between `tMBG` and `tGood`. The interaction effect means that the effect of `tMBG` is different across levels of `tGood`. The meaning will become clearer (hopefully!) when you see the plots of the means below.
+
+![Bar chart showing means](images/lab4_2way_barchrt.png){fig-align="center"}
+
+As you can see from the figure above, in the No MBG and 15 days, the perceived durability of search good is higher than that of the experience good. But when the MBG is 30days, the perceived durability of search good is lower than that of the experience good.
+
+Line graph is also often used to plot the interaction.
+
+![Line graph showing an interaction effect exists](images/lab4_2way_linegrp.png){fig-align="center"}
+
+::: callout-note
+## Task
+
+What do you think about the potential managerial implications of the above findings?
+:::
+
+## Learning Experimentation from Published Research
+
+You can learn experimentation from published research. You can even replicate results of published studies as more authors nowadays made their data publicly available as a way to increase research transparency. Open Science Forum <https://osf.io> facilitates such initiatives. You can click this [link](https://osf.io/j6bns) or this [link](https://osf.io/tjgma/?view_only=d9cb35f5c1984edaac208aa90a072ec5) as examples of such documentation.
