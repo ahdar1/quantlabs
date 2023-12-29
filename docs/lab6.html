@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -55,10 +55,12 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -68,11 +70,18 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">MKTG402(3) Labs</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      MKTG402(3) Labs
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -80,52 +89,59 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">MKTG402(3) Labs</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab1.html" class="sidebar-item-text sidebar-link">Getting started with SPSS (Week 13)</a>
+  <a href="./lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started with SPSS (Week 13)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab2.html" class="sidebar-item-text sidebar-link">Descriptive Statistics, Graphs and Charts in SPSS (Week 14)</a>
+  <a href="./lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descriptive Statistics, Graphs and Charts in SPSS (Week 14)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab3.html" class="sidebar-item-text sidebar-link">Crosstabs and Two Independent Samples T-test (Week 15)</a>
+  <a href="./lab3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Crosstabs and Two Independent Samples T-test (Week 15)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab4.html" class="sidebar-item-text sidebar-link">ANOVA and Experimentation (Week 16)</a>
+  <a href="./lab4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">ANOVA and Experimentation (Week 16)</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab5.html" class="sidebar-item-text sidebar-link">Regression (Week 17)</a>
+  <a href="./lab5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Regression (Week 17)</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -144,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab6.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -154,9 +170,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-lab6" class="level1">
 <h1>Mediation Analysis (Extra)</h1>
 <p>Data: RobotGLP.sav</p>
-<ul>
-<li>Data is available on <a href="https://modules.lancaster.ac.uk/course/view.php?id=35502#section-6">Moodle</a></li>
-</ul>
+<p>Data is available on ‘Workshop Materials’ folder on Moodle.</p>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <p>This is an extra lab exercise that you do on your own time.</p>
@@ -176,25 +190,23 @@ ul.task-list li input[type="checkbox"] {
 <p>We start with the following model where consumers’ environmental concerns (<code>EC</code>) is hypothesized to explain their intentions to join a green loyalty program (<code>Intention</code>).</p>
 <div id="fig-slr" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<figure class="figure">
-<img src="images/lab6_model1.png" title="Simple linear regression model" class="img-fluid figure-img" style="width:90.0%">
-</figure>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Simple linear model</figcaption><p></p>
+<p><img src="images/lab6_model1.png" title="Simple linear regression model" class="img-fluid figure-img" style="width:90.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Simple linear model</figcaption>
 </figure>
 </div>
 <p>and the model in <a href="#fig-med">Figure&nbsp;2</a> with anticipated guilt (<code>Guilt</code>) being added.</p>
 <div id="fig-med" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/lab6_model2.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Mediation model</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Mediation model</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task
 </div>
 </div>
@@ -202,12 +214,12 @@ Task
 <p>From the two figures above, identify the independent variable, dependent variable, and mediator variable?</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task: Fill in the blank
 </div>
 </div>
@@ -216,12 +228,12 @@ Task: Fill in the blank
 <p>Write down the simple linear regression equation: ………. (<strong>Model 1</strong>).</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task: Fill in the blanks
 </div>
 </div>
@@ -233,12 +245,12 @@ Task: Fill in the blanks
 </ol>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task: Fill in the blanks
 </div>
 </div>
@@ -251,12 +263,12 @@ Task: Fill in the blanks
 </div>
 </div>
 <p>In this lab, we are going to use Baron and Kenny’s procedure (1986)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> in examining the mediation effect. Note that nowadays this procedure loses its popularity in academic research because of its limitations. For example, the procedure assumes that the total effect of X on Y should be significant in the first place before proceeding to testing whether M affects the relationship. However, given this limitation, it is still important to appreciate this technique as it provides a basic understanding of a simple mediation model. Furthermore, in many cases, when mediation exists, the total effect of X on Y is significant.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task: Fill in the blanks
 </div>
 </div>
@@ -269,12 +281,12 @@ Task: Fill in the blanks
 </ol>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task: Fill in the blanks
 </div>
 </div>
@@ -285,12 +297,12 @@ Task: Fill in the blanks
 <p>Precondition 3 is tested via running a regression model as seen in Figure …..</p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task
 </div>
 </div>
@@ -299,7 +311,7 @@ Task
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab6_model3.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Replace the question marks with numbers</figcaption><p></p>
+<figcaption class="figure-caption">Replace the question marks with numbers</figcaption>
 </figure>
 </div>
 </div>
@@ -309,12 +321,12 @@ Task
 <h2 class="anchored" data-anchor-id="sobels-test">Sobel’s test</h2>
 <p>Next, to assess whether mediation effect is significant, Baron and Kenny (1986) recommended researchers to directly assess whether the product <span class="math inline">\(a*b\)</span> is significant by using a Sobel’s test.</p>
 <p>Use the online Sobel’s test by clicking this link <a href="http://quantpsy.org/sobel/sobel.htm" class="uri">http://quantpsy.org/sobel/sobel.htm</a>. To implement the Sobel’s test, you need to use the <strong>unstandardized</strong> estimates and their <strong>standard errors</strong>. But before inputting numbers into the above website, please put the necessary information in the table below:</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -348,12 +360,12 @@ Note
 <h2 class="anchored" data-anchor-id="using-process-macro-additional">Using Process Macro (additional)</h2>
 <p>Go to this website <a href="http://processmacro.org/download.html" class="uri">http://processmacro.org/download.html</a>, and download the Process macro, and install it onto your SPSS. The procedure of installing the macro is the same the one you did before when installing my heteroskedasticityV3 macro in the previous lab. So, if you managed to install my macro, you should be able to install this macro easily.</p>
 <p>We are going to use this macro to test our mediation model. By using this macro, you do not need to follow the three steps procedure suggested by Baron and Kenny (1986). The macro implements what a so called ‘Bootstrapping’ technique. Bootstrapping is a resampling technique where your data is treated as a population, and the macro keeps taking samples from your data with replacement according a pre-specified number (the default of the program is 5000 samples). For each sample, the macro computes <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and the product <span class="math inline">\(a*b\)</span>. Therefore, by having 5000 samples, there would be 5000 values of product <span class="math inline">\(a*b\)</span>. Using these 5000 values of the product <span class="math inline">\(a*b\)</span>, the macro calculates the confidence interval for the product <span class="math inline">\(a*b\)</span> – it is called a bootstrap confidence interval. <strong>If the interval does not include zero, the mediation effect is significant</strong>.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -362,12 +374,12 @@ Tip
 <p>For example, if the 95% bootstrap confidence interval for the size of the mediation effect is [0.04;0.25]. This means that we are 95% confident that the effect lies from 0.04 to 0.25.</p>
 </div>
 </div>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -390,7 +402,7 @@ Important
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/lab6_process_win.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Process Macro</figcaption><p></p>
+<figcaption class="figure-caption">Process Macro</figcaption>
 </figure>
 </div>
 </section>
@@ -400,15 +412,15 @@ Important
 <div id="fig-processout" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/lab6_process_out.png" class="img-fluid figure-img" style="width:90.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Last part of the Process macro’s outputs</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Last part of the Process macro’s outputs</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Task
 </div>
 </div>
@@ -461,9 +473,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -528,6 +554,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

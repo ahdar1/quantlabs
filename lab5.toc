@@ -1,9 +1,0 @@
-\contentsline {section}{\numberline {1}Learning objectives}{1}{section.1}% 
-\contentsline {section}{\numberline {2}Why Regression}{2}{section.2}% 
-\contentsline {section}{\numberline {3}Conducting Multiple Regression with SPSS}{3}{section.3}% 
-\contentsline {section}{\numberline {4}Multicollinearity Problems}{6}{section.4}% 
-\contentsline {section}{\numberline {5}If Multicollinearity Exists}{8}{section.5}% 
-\contentsline {section}{\numberline {6}Heteroskedasticity Problem}{8}{section.6}% 
-\contentsline {section}{\numberline {7}Installing the HeteroskedasticityV3 Macro}{9}{section.7}% 
-\contentsline {section}{\numberline {8}Running the Macro without Installation}{11}{section.8}% 
-\contentsline {section}{\numberline {9}Video}{11}{section.9}% 

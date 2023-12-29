@@ -2,7 +2,7 @@
 
 Data: Dell.sav
 
--   Data is available on [Moodle](https://modules.lancaster.ac.uk/course/view.php?id=35502#section-6).
+-   Data is available on Moodle
 
 -   On Moodle, go to a section `Workshop Materials`, and open a folder `Workshop 1, 2, 3 - Data and Articles`. Download Dell.sav and **Dell Questionnaire** .
 

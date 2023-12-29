@@ -2,7 +2,7 @@
 
 Data: MBGshort.sav
 
--   Data is available on [Moodle](https://modules.lancaster.ac.uk/course/view.php?id=35502#section-6)
+Data is available on 'Workshop Materials' folder on Moodle.
 
 ## Learning objectives
 
