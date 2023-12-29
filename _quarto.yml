@@ -1,31 +1,24 @@
 project:
-  type: website
-  output-dir: docs
+  type: book
 
-website:
+book:
   title: "MKTG402(3) Labs"
-  
-  sidebar:
-    style: "floating"
-    search: true
-    contents:
-          - index.qmd
-          - lab1.qmd
-          - lab2.qmd
-          - lab3.qmd
-          - lab4.qmd
-          - lab5.qmd
+  author: "Ahmad Daryanto"
+  date: "January 2024"
+  chapters:
+    - index.qmd
+    - lab1.qmd
+    - lab2.qmd
+    - lab3.qmd
+    - lab4.qmd
+    - lab5.qmd
+
+bibliography: references.bib
 
 format:
   html:
     theme: cosmo
-    css: styles.css
-    toc: true
   pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
-
+    documentclass: scrreprt
 
 editor: visual
-
