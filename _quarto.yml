@@ -4,7 +4,7 @@ project:
 book:
   title: "MKTG402(3) Labs"
   author: "Ahmad Daryanto"
-  date: "January 2024"
+  date: "16-01--2024"
   chapters:
     - index.qmd
     - lab1.qmd
