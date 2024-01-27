@@ -10,7 +10,7 @@ The pdf version of this document is available to download from [Moodle](https://
 
 ## SPSS Version
 
-I am using SPSS version 28. You can use any SPSS versions (e.g., ver 26, 27), where the statistical procedures used in the labs are the same but the output formats are slightly different from those of version 28. Therefore, I recommend you to use version 28, so you can check whether your outputs are the same with those shown in this document.
+I am using SPSS version 28. You can use any SPSS versions (e.g., ver 26, 27, and 29), where the statistical procedures used in the labs are the same but the output formats are slightly different from those of version 28. Therefore, I recommend you to use version 28, so you can check whether your outputs are the same with those shown in this document.
 
 ## Textbook
 
