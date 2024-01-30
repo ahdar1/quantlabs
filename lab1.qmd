@@ -32,7 +32,7 @@ Have a look at the questionnaire and identify which questions use a nominal, int
 
 ## Working with SPSS
 
-Open the data file Dell.sav, which you must download from [Moodle](https://modules.lancaster.ac.uk/mod/folder/view.php?id=1467299). You should save the data to your own drive and then double-click the file name from windows explorer.
+Open the data file Dell.sav, which you must download from Moodle. You should save the data to your own drive and then double-click the file name from windows explorer.
 
 There are two different views of the data which can be seen by clicking the bottom left tab. The data view shows the imputed data for each respondent (each row represents a respondent and each column represents a variable or questionnaire item). The variable view shows the detail of what has been measured. The key columns are the Name, Labels and Values columns which give the shortened variable name (e.g. see variable `q2_job` in the third row), the full details of what has been measured as a label (e.g. please indicate which of these you have ever done on the Internet: Looked for a job) and the Values represent what the imputed numbers represented in the questionnaire (e.g. 0 = "don't know", 1 = "looked for a job", 2= don't look for a job).
 
