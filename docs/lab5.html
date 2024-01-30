@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MKTG402(3) Labs – lab5</title>
+<title>MKTG402(3) Labs - 5&nbsp; Regression (Week 17)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./lab4.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,7 +64,6 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab5.html">Regression (Week 17)</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Regression (Week 17)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -109,31 +109,31 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting started with SPSS (Week 13)</span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting started with SPSS (Week 13)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Descriptive Statistics, Graphs and Charts in SPSS (Week 14)</span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Descriptive Statistics, Graphs and Charts in SPSS (Week 14)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Crosstabs and Two Independent Samples T-test (Week 15)</span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Crosstabs and Two Independent Samples T-test (Week 15)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">ANOVA and Experimentation (Week 16)</span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA and Experimentation (Week 16)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./lab5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Regression (Week 17)</span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Regression (Week 17)</span></span></a>
   </div>
 </li>
     </ul>
@@ -143,35 +143,45 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-lab5" id="toc-sec-lab5" class="nav-link active" data-scroll-target="#sec-lab5">Regression (Week 17)</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#why-regression" id="toc-why-regression" class="nav-link" data-scroll-target="#why-regression">Why Regression</a></li>
-  <li><a href="#conducting-multiple-regression-with-spss" id="toc-conducting-multiple-regression-with-spss" class="nav-link" data-scroll-target="#conducting-multiple-regression-with-spss">Conducting Multiple Regression with SPSS</a></li>
-  <li><a href="#multicollinearity-problems" id="toc-multicollinearity-problems" class="nav-link" data-scroll-target="#multicollinearity-problems">Multicollinearity Problems</a></li>
-  <li><a href="#if-multicollinearity-exists" id="toc-if-multicollinearity-exists" class="nav-link" data-scroll-target="#if-multicollinearity-exists">If Multicollinearity Exists</a></li>
-  <li><a href="#heteroskedasticity-problem" id="toc-heteroskedasticity-problem" class="nav-link" data-scroll-target="#heteroskedasticity-problem">Heteroskedasticity Problem</a></li>
-  <li><a href="#sec-install" id="toc-sec-install" class="nav-link" data-scroll-target="#sec-install">Installing the HeteroskedasticityV3 Macro</a></li>
-  <li><a href="#running-the-macro-without-installation" id="toc-running-the-macro-without-installation" class="nav-link" data-scroll-target="#running-the-macro-without-installation">Running the Macro without Installation</a></li>
-  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video">Video</a></li>
-  </ul></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">5.1</span> Learning objectives</a></li>
+  <li><a href="#why-regression" id="toc-why-regression" class="nav-link" data-scroll-target="#why-regression"><span class="header-section-number">5.2</span> Why Regression</a></li>
+  <li><a href="#conducting-multiple-regression-with-spss" id="toc-conducting-multiple-regression-with-spss" class="nav-link" data-scroll-target="#conducting-multiple-regression-with-spss"><span class="header-section-number">5.3</span> Conducting Multiple Regression with SPSS</a></li>
+  <li><a href="#multicollinearity-problems" id="toc-multicollinearity-problems" class="nav-link" data-scroll-target="#multicollinearity-problems"><span class="header-section-number">5.4</span> Multicollinearity Problems</a></li>
+  <li><a href="#if-multicollinearity-exists" id="toc-if-multicollinearity-exists" class="nav-link" data-scroll-target="#if-multicollinearity-exists"><span class="header-section-number">5.5</span> If Multicollinearity Exists</a></li>
+  <li><a href="#heteroskedasticity-problem" id="toc-heteroskedasticity-problem" class="nav-link" data-scroll-target="#heteroskedasticity-problem"><span class="header-section-number">5.6</span> Heteroskedasticity Problem</a></li>
+  <li><a href="#sec-install" id="toc-sec-install" class="nav-link" data-scroll-target="#sec-install"><span class="header-section-number">5.7</span> Installing the HeteroskedasticityV3 Macro</a></li>
+  <li><a href="#running-the-macro-without-installation" id="toc-running-the-macro-without-installation" class="nav-link" data-scroll-target="#running-the-macro-without-installation"><span class="header-section-number">5.8</span> Running the Macro without Installation</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video"><span class="header-section-number">5.9</span> Video</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lab5.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-lab5" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Regression (Week 17)</span></span></h1>
+</div>
 
 
-<section id="sec-lab5" class="level1">
-<h1>Regression (Week 17)</h1>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
 <p>Data: RobotGLP.sav</p>
 <p>Data is available on ‘Workshop Materials’ folder on Moodle.</p>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<section id="learning-objectives" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">5.1</span> Learning objectives</h2>
 <p>The aim of this lab is to help you to use SPSS to conduct regression analysis, which is useful in explaining the relationship between a set of <em>independent</em> variables and a <em>dependent variable</em>.</p>
 <p>At the end of this lab, we hope that you will be able to</p>
 <ul>
@@ -194,8 +204,8 @@ Important
 </div>
 </div>
 </section>
-<section id="why-regression" class="level2">
-<h2 class="anchored" data-anchor-id="why-regression">Why Regression</h2>
+<section id="why-regression" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="why-regression"><span class="header-section-number">5.2</span> Why Regression</h2>
 <p>In marketing research, we often need to determine the impact of a set of marketing variables on one variable – a factor we want to understand or predict. Furthermore, among those variables we may want to find out which variables matter most, and which variables are not so important that we can ignore. Regression analysis can help us findings the answers to these questions.</p>
 <p>In this workshop, we want to investigate factors that influence consumers’ decision to join a green loyalty program – This LP encourages behaviours from hotel guests that are good for environment (e.g., reuse towels).</p>
 <div class="quarto-figure quarto-figure-left">
@@ -236,8 +246,8 @@ Important
 <p>If you want to examine whether <code>Guilt</code> is a significant factor, then you want to test <span class="math inline">\(H0\)</span>: <span class="math inline">\(\beta_1=0\)</span> against <span class="math inline">\(H1\)</span>: <span class="math inline">\(\beta_1 \ne 0\)</span>. SPSS will report the p-value associated with <span class="math inline">\(H0\)</span>. If p-value is less than 0.05, you reject <span class="math inline">\(H0\)</span> otherwise retain it. If you reject <span class="math inline">\(H0\)</span>, you can conclude that <code>Guilt</code> is a significant factor that influences <code>intent</code>.</p>
 <p>If you hypothesize that <code>Guilt</code> is a significant factor and has a positive impact on satisfaction, then you want to test <span class="math inline">\(H0\)</span>: <span class="math inline">\(\beta_1=0\)</span> against <span class="math inline">\(H1\)</span>: <span class="math inline">\(\beta_1 &gt; 0\)</span>. SPSS will report the p-value associated with <span class="math inline">\(H0\)</span>. You have to divide the p-value by 2. If the p-value/2 is less than 0.05, you reject <span class="math inline">\(H0\)</span> otherwise retain it. If you reject <span class="math inline">\(H0\)</span>, you can conclude that <code>Guilt</code> has a significant positive influence on <code>Intent</code>.</p>
 </section>
-<section id="conducting-multiple-regression-with-spss" class="level2">
-<h2 class="anchored" data-anchor-id="conducting-multiple-regression-with-spss">Conducting Multiple Regression with SPSS</h2>
+<section id="conducting-multiple-regression-with-spss" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="conducting-multiple-regression-with-spss"><span class="header-section-number">5.3</span> Conducting Multiple Regression with SPSS</h2>
 <p><strong>Open RobotGLP.sav</strong> – Thanks to <a href="https://www.lancaster.ac.uk/lums/people/jingxi-huang">Jingxi</a> for allowing us to use a subset of her data to test the above model.</p>
 <p>To conduct a regression analysis in SPSS, click the following: <strong>Analyze</strong><span class="math inline">\(\rightarrow\)</span><strong>Regression</strong><span class="math inline">\(\rightarrow\)</span><strong>Linear.</strong></p>
 <p>Enter <code>Intent</code> into the dependent variable box.</p>
@@ -309,8 +319,8 @@ Task
 </div>
 </div>
 </section>
-<section id="multicollinearity-problems" class="level2">
-<h2 class="anchored" data-anchor-id="multicollinearity-problems">Multicollinearity Problems</h2>
+<section id="multicollinearity-problems" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="multicollinearity-problems"><span class="header-section-number">5.4</span> Multicollinearity Problems</h2>
 <p>High correlation among independent variables is problematic in multiple regression because it is hard for us to determine the individual contribution of each of the independent variables in the model. For example, if <code>Attract</code> is highly correlated with <code>Guilt</code>, then we cannot conclude that <code>Attract</code> have the strongest influence on <code>Intent</code> because <code>Guilt</code> also gives contribution to the magnitude of Attract-Intent relationship (it looks stronger than it should be). In other words, the coefficients associated with the regression estimates are biased – not the same as their true population values.</p>
 <p>The situation where an independent variable is highly correlated with another variable is referred to as multicollinearity problem. To diagnose whether multicollinearity exists, you can check it in two ways.</p>
 <ol type="1">
@@ -366,8 +376,8 @@ Task
 </div>
 </div>
 </section>
-<section id="if-multicollinearity-exists" class="level2">
-<h2 class="anchored" data-anchor-id="if-multicollinearity-exists">If Multicollinearity Exists</h2>
+<section id="if-multicollinearity-exists" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="if-multicollinearity-exists"><span class="header-section-number">5.5</span> If Multicollinearity Exists</h2>
 <p>What should you do if multicollinearity exists?</p>
 <p>You can deal with it using one of the following techniques:</p>
 <ol type="1">
@@ -377,8 +387,8 @@ Task
 <li><p>Collect more samples</p></li>
 </ol>
 </section>
-<section id="heteroskedasticity-problem" class="level2">
-<h2 class="anchored" data-anchor-id="heteroskedasticity-problem">Heteroskedasticity Problem</h2>
+<section id="heteroskedasticity-problem" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="heteroskedasticity-problem"><span class="header-section-number">5.6</span> Heteroskedasticity Problem</h2>
 <p>One of the assumptions in regression is that residuals or errors should be constant across any values of independent variables. This is referred to as the <strong>homoskedasticity</strong> assumption. The opposite of homoskedasticity is <strong>heteroskedasticity</strong> where residuals are not constant (i.e., heteroskedastic errors) (<em>learn how to pronounce these words, it took me a while to get used to them!</em>).</p>
 <p>If heteroskedasticity exists, hypotheses tests about the regression parameters are not correct anymore. See lecture slide for more details. One of the recommended techniques to handle heteroskedasticity is to adjust the standard errors of the regression estimates (i.e., values in the <code>Std. error</code> column in the SPSS output).</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -396,8 +406,8 @@ Task
 </div>
 <p>To rerun your regression, install and use the ‘HeteroskedasticityV3.spd’ macro developed by yours truly<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. The macro produces regression outputs with/without heteroscedasticity-adjusted standard errors.</p>
 </section>
-<section id="sec-install" class="level2">
-<h2 class="anchored" data-anchor-id="sec-install">Installing the HeteroskedasticityV3 Macro</h2>
+<section id="sec-install" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sec-install"><span class="header-section-number">5.7</span> Installing the HeteroskedasticityV3 Macro</h2>
 <p>SPSS in the Lab PCs or from cloud may not permit you to install the add-on macro because you do not have an admin right to do so. However, it is worth trying to install the macro, it may work! Alternatively, you need to install the macro in your personal PC where you have an admin right to install it.</p>
 <p>You can download the macro from these websites:</p>
 <ul>
@@ -422,11 +432,11 @@ Task
 </div>
 <p>If you do not manage to install the macro. Do not panic! There is another option without installation – see below:</p>
 </section>
-<section id="running-the-macro-without-installation" class="level2">
-<h2 class="anchored" data-anchor-id="running-the-macro-without-installation">Running the Macro without Installation</h2>
+<section id="running-the-macro-without-installation" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="running-the-macro-without-installation"><span class="header-section-number">5.8</span> Running the Macro without Installation</h2>
 <p>You can run the macro without having it installed on your machine. Follow these steps:</p>
 <ul>
-<li><p>Go back to the download folder in your PC where you have downloaded several files from this page <a href="https://github.com/ahmaddaryanto/Heteroskedasticity" class="uri">https://github.com/ahmaddaryanto/Heteroskedasticity</a> (see <a href="#sec-install">Section&nbsp;1.7</a>)</p></li>
+<li><p>Go back to the download folder in your PC where you have downloaded several files from this page <a href="https://github.com/ahmaddaryanto/Heteroskedasticity" class="uri">https://github.com/ahmaddaryanto/Heteroskedasticity</a> (see <a href="#sec-install"><span>Section&nbsp;5.7</span></a>)</p></li>
 <li><p>HeteroskedasticityV3.sps was included when you download the files from the github page.</p></li>
 <li><p>Open the HeteroskedasticityV3.sps on your SPSS – it will be opened as a syntax file,</p></li>
 <li><p>Run the syntax file (highlight all the lines, run the selection button, i.e., the green button).</p></li>
@@ -435,24 +445,23 @@ Task
 <li><p>Run the file.</p></li>
 </ul>
 </section>
-<section id="video" class="level2">
-<h2 class="anchored" data-anchor-id="video">Video</h2>
+<section id="video" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="video"><span class="header-section-number">5.9</span> Video</h2>
 <p><a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2">Lecture Week 16 on Correlation and Regression</a></p>
 <p><a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=074239e8-f79d-4ffb-8754-ac9400f4f00f">Regression with a categorical iv</a></p>
 <p><a href="https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=5ba02b44-b4d1-4b70-ab45-acb900dc20a4">Regression diagnostics</a></p>
 
 
 </section>
-</section>
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
 <li id="fn1"><p>Ellis, Paul D. 2011. The Essential Guide to Effect Sizes, p.41<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Daryanto, A. (2020). Tutorial on heteroskedasticity using heteroskedasticityV3 SPSS macro. The Quantitative Methods for Psychology, 16(5), 8-20<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section></div></main> <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -686,6 +695,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lab4.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">ANOVA and Experimentation (Week 16)</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
