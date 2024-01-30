@@ -18,7 +18,7 @@ At the end of this lab, we hope that you will be able to:
 
 -   Transfer tables into Word
 
-In this lab we will use a data set from real customers that is available to download from [Moodle](https://modules.lancaster.ac.uk/mod/folder/view.php?id=1467299). The data set contains information from 372 customers collected from a survey of purchasers of Dell PCs and notebooks. With this survey, Dell wants to understand their customers' primary usage for internet and their customers' satisfaction with their purchases. Customers also give information about their demographics such as age and gender. Your primary job today is to describe the characteristics of the sample.
+In this lab we will use a data set from real customers that is available to download from [Moodle](https://modules.lancaster.ac.uk/mod/folder/view.php?id=1959818). The data set contains information from 372 customers collected from a survey of purchasers of Dell PCs and notebooks. With this survey, Dell wants to understand their customers' primary usage for internet and their customers' satisfaction with their purchases. Customers also give information about their demographics such as age and gender. Your primary job today is to describe the characteristics of the sample.
 
 ## Questionnaire and Data
 
