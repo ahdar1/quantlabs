@@ -16,7 +16,7 @@ Last time we focused on producing tables, in this lab we are now focusing on pro
 
 ## Charts
 
-You can use the charts from the commands already undertaken in lab 1, however if you want to explore other charts or customize a chart you should use the specifically developed chart tool. If you use SPSS ver 28 and below, click **Graphs**$\rightarrow$**Legacy dialogs** and then select the type of chart that you want. In SPSS ver 29, SPSS gets rid off **Legacy dialogs** -- you will see list of graphs you can use after clicking **Graphs**.
+You can use the charts from the commands already undertaken in lab 1, however if you want to explore other charts or customize a chart you should use the specifically developed chart tool. If you use SPSS ver 28 and below, click **Graphs**$\rightarrow$**Legacy dialogs** and then select the type of chart that you want. In SPSS ver 29, SPSS gets rid of **Legacy dialogs** -- you will see list of graphs you can use after clicking **Graphs**.
 
 To start off with, try a pie chart for gender (`q14_gender`), a bar chart for level of education (`q11_grade`) and a box plot for satisfaction (`q4_sat`).
 
