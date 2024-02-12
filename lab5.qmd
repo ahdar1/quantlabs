@@ -237,7 +237,9 @@ You can run the macro without having it installed on your machine. Follow these 
 
 ## Video
 
-[Lecture Week 16 on Correlation and Regression](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2)
+[Lecture Week 16 on Correlation and Regression]
+
+[2023](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2)
 
 [Regression with a categorical iv](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=074239e8-f79d-4ffb-8754-ac9400f4f00f)
 
