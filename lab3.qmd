@@ -192,6 +192,8 @@ Why not investigating if there are differences in the satisfaction level between
 
 ## Readings
 
+Cohen, J. (1988). Statistical power analysis for the behavioral sciences, 2nd ed. Lawrence Erlbaum. 
+
 Feick, L. F., & Price, L. L. (1987). The market maven: A diffuser of marketplace information. *Journal of Marketing*, 51(1), 83-97.
 
 Goldsmith, R. E., Flynn, L. R., & Goldsmith, E. B. (2003). Innovative consumers and market mavens. *Journal of Marketing Theory and Practice*, 11(4), 54-65.
