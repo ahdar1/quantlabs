@@ -22,7 +22,7 @@ Using the cells tab you should also select row or column percents to help you to
 
 In the output window you will see that three (or four with the addition Phi and Cramer's V) tables are produced. You can ignore the `Case Processing Summary`.
 
-The second table is the crosstab table that you produced in lab 1 and the third table `Chi-Square Tests` gives you the new results. You will see that you have a table and graph like the one below for the gender by online crosstab.
+The second table is the crosstab table that you produced in lab 1 and the third table `Chi-Square Tests` gives you the new results. You will see that you have a table and graph like the one below for the gender by online crosstabs.
 
 ![Frequency Table](images/lab3_pic1_revised.png){fig-align="center" width="80%"}
 
