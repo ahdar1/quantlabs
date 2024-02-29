@@ -124,7 +124,7 @@ This table tells us which of the independent variables significantly explain or 
 ::: callout-note
 ## Task
 
-If you want to make a prediction, use the unstandardized coefficients (B). If someone assigns a rating of three on `Guilt`, `Attract` can you predict her intention level? (round-off your answer)
+If you want to make a prediction, use the unstandardized coefficients (B). If a female respondent aged 20 assigned a rating of three on `Guilt`, `Attract` can you predict her intention level? (round-off your answer)
 :::
 
 ## Multicollinearity Problems
