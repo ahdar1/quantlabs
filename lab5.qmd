@@ -239,7 +239,7 @@ You can run the macro without having it installed on your machine. Follow these 
 
 [Lecture Week 16 on Correlation and Regression]
 
-[2023](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2)
+[2023](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2) [2024](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a65c307c-1b84-4d05-a135-b11000598009#)
 
 [Regression with a categorical iv](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=074239e8-f79d-4ffb-8754-ac9400f4f00f)
 
