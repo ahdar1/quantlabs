@@ -2,7 +2,7 @@
 
 This is a website for the workshops of MKTG402(3) - Introduction to Quantitative Research Methods for students at the Advanced Marketing Management (AMM) program at Lancaster University.
 
-Instructor: [**Dr. Ahmad Daryanto**](https://sites.google.com/view/ahmaddaryanto)
+Instructor: [**Professor Ahmad Daryanto**](https://sites.google.com/view/ahmaddaryanto)
 
 ## Document Version
 
