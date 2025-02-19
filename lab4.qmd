@@ -14,7 +14,7 @@ Learning objectives: At the end of this lab, we hope that you will be able to
 
 -   Produce and interpret basic SPSS outputs from a two-way ANOVA experiment.
 
-In this lab, we are going to look at how one-way ANOVA can be used to extend the two independent samples T test to look for means differences across three or more groups and secondly to show how data resulted from manipulation of more than one factor can be analyzed by extending one-way ANOVA method. For instance, to look at how types of return condition facilitated by money-back guarantees (MBG for short) (No MBG, 15 days, 30 days) and types of product (search vs. experience product) influence perceived product quality. We focus our attention to between-subject ANOVA designs where each respondent is randomly assigned to only one of the experimental conditions.
+In this lab, we are going to look at how one-way ANOVA can be used to extend the two independent samples T test to look for means differences across three or more groups and secondly to show how data resulted from manipulation of more than one factor can be analyzed by extending one-way ANOVA method. For instance, to look at how types of return condition facilitated by money-back guarantees (MBG for short) (No MBG, 15 days, 30 days) and types of product (search vs. experience product) influence perceived product quality. We focus our attention to between-subject ANOVA designs where each respondent is randomly assigned to one of the experimental conditions.
 
 ## Mean Differences Across Three or More Groups
 
