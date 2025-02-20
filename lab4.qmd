@@ -76,7 +76,7 @@ The experiment above can be described in shorthand notation as a 3 (type of MBG:
 Because there are two variables being manipulated (type of MBG, type of product), the design is classified as a **two-way ANOVA** design.
 :::
 
-To analyze data from this experiment, use the menu options **Analyze**$\rightarrow$**General Linear Model** $\rightarrow$**Univariate**. Assign `quality5` as the dependent variable and `tMBG` and `tGood` as the independent variables. It would also be useful to plot the relationship between the variables. So click on the plot tab and specify `tMBG` as the horizontal axis and `tGood` as the separate lines. Also in order to see the means for each group you need to click on the `Options` tab and check `Descriptive statistics`. The following tables provide descriptive statistics for each experimental group.
+To analyze data from this experiment, use the menu options **Analyze**$\rightarrow$**General Linear Model** $\rightarrow$**Univariate**. Assign `quality5` as the dependent variable and `tMBG` and `tGood` as the independent variables (i.e., insert the two variables to the `Fixed Factor(s)` box). It would also be useful to plot the relationship between the variables. So click on the plot tab and specify `tMBG` as the horizontal axis and `tGood` as the separate lines. Also in order to see the means for each group you need to click on the `Options` tab and check `Descriptive statistics`. The following tables provide descriptive statistics for each experimental group.
 
 ![Cell frequency: This gives the number of respondents within each experimental condition](images/lab4_2way_des.png){fig-align="center"}
 
