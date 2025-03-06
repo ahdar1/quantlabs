@@ -67,7 +67,7 @@ If you hypothesize that `Guilt` is a significant factor and has a positive impac
 
 ## Conducting Multiple Regression with SPSS
 
-**Open RobotGLP.sav** -- Thanks to [Jingxi](https://www.lancaster.ac.uk/lums/people/jingxi-huang) for allowing us to use a subset of her data to test the above model.
+**Open RobotGLP.sav** -- Thanks to [Jingxi](https://www.research.lancs.ac.uk/portal/en/people/jingxi-huang(b7eacd2f-0786-430a-ba51-776c57c8c86a).html) for allowing us to use a subset of her data to test the above model.
 
 To conduct a regression analysis in SPSS, click the following: **Analyze**$\rightarrow$**Regression**$\rightarrow$**Linear.**
 
