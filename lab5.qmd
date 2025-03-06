@@ -213,7 +213,9 @@ You can download the macro from these websites:
 
 ![HeteroskedaticityV3 Macro in the SPSS menu after installation](images/lab5_macro_path.png)
 
+
 ![HeteroskedaticityV3 Macro](images/lab5_macro.png)
+
 
 If you do not manage to install the macro. Do not panic! There is another option without installation -- see below:
 
