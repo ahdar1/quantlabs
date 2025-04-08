@@ -4,7 +4,7 @@ Data: MBGshort.sav
 
 Data is available on 'Workshop Materials' folder on Moodle.
 
-## Learning objectives
+## Learning Objectives
 
 The aim of this lab is to help you to use SPSS to analyze data from an experimentation. Specifically, we want to examine mean differences across three experimental groups (one-way ANOVA design) and analyze data of a more complex experiment (i.e., two-way ANOVA in the form of a 3x2 between-subject design).
 
