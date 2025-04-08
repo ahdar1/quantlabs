@@ -83,7 +83,7 @@ model_excl <- lm(y ~ x, data = dat[-nrow(dat), ])
 
 # Plot all points
 plot(dat$x, dat$y, 
-     main = "An outlier in X with high leverage but  uninfluential", 
+     main = "An outlier in X with high leverage but uninfluential", 
      xlab = "X", ylab = "Y", pch = 19, col = "black")
 
 # Add OLS line with all points
