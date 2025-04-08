@@ -46,4 +46,8 @@ Tasks: Here we will use SPSS to compare the mean scores of two or more nominal g
 
 Tasks: Using correlation we will determine the nature of the association between two sets of interval or ratio data. Then using linear regressions, we will develop a model to examine the influence of a set of independent variables on one dependent variable.
 
+### [Additional Workshop: Influential Observations (to be launched in the academic year of 2025/26)](#sec-lab6)
+
+Tasks: We will learn how to detect observations that can distort regression results: influential observations. We use two widely used measures in the influential analysis: Cook's distance and DFBetas. Next, we learn how to run regression without including the influential observations but still retaining them in our data set.  
+
 {{< pagebreak >}}
