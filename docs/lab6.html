@@ -251,7 +251,7 @@ Important
 <h2 data-number="6.3" class="anchored" data-anchor-id="measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</h2>
 <section id="cooks-distance" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="cooks-distance"><span class="header-section-number">6.3.1</span> Cook’s distance</h3>
-<p>Cook’s distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook’s distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation.</p>
+<p>Cook’s distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook’s distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook’s distance associated with each observation in a data set.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -269,7 +269,8 @@ Important
 </section>
 <section id="dfbetas" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="dfbetas"><span class="header-section-number">6.3.2</span> DFBetas</h3>
-<p>The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large data, where <span class="math inline">\(n\)</span> is a sample size (Kutner, 2005).</p>
+<p>The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. SPSS will calculate DFBetas for every observations. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.</p>
+<p>As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large data, where <span class="math inline">\(n\)</span> is a sample size (Kutner, 2005).</p>
 </section>
 </section>
 <section id="checking-with-spss" class="level2" data-number="6.4">

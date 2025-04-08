@@ -109,7 +109,7 @@ In a simple linear regression, we can use the scatter plot as demonstrated in th
 
 ### Cook's distance
 
-Cook's distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook's distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation.
+Cook's distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook's distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook's distance associated with each observation in a data set. 
 
 ::: callout-important
 As a rule of thumb, an observation is considered influential if its Cook's distance is greater than 1 (Chatterjee and Hadi, 2015). Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook's distances that are much larger than those of the other observations.
@@ -119,7 +119,9 @@ A closely related measure to the Cook's distance is DFITS, which is also frequen
 
 ### DFBetas
 
-The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and $\frac{2}{\sqrt(n)}$ for large data, where $n$ is a sample size (Kutner, 2005).
+The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. SPSS will calculate DFBetas for every observations. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.
+
+As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and $\frac{2}{\sqrt(n)}$ for large data, where $n$ is a sample size (Kutner, 2005).
 
 ## Checking with SPSS
 
