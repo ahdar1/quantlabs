@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ahmad Daryanto">
-<meta name="dcterms.date" content="2025-02-28">
 
-<title>MKTG402(3) Labs</title>
+<title>MKTG402(3) Labs - 6&nbsp; Influential Observations (to be launched in the academic year of 2025/26)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./lab1.html" rel="next">
+<link href="./lab5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,6 +61,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab6.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Influential Observations (to be launched in the academic year of 2025/26)</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -102,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab6.html" class="sidebar-item-text sidebar-link">
+  <a href="./lab6.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Influential Observations (to be launched in the academic year of 2025/26)</span></span></a>
   </div>
 </li>
@@ -152,20 +152,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</a></li>
+  <li><a href="#the-foundation" id="toc-the-foundation" class="nav-link" data-scroll-target="#the-foundation"><span class="header-section-number">6.2</span> The Foundation</a></li>
+  <li><a href="#measures-of-influence" id="toc-measures-of-influence" class="nav-link" data-scroll-target="#measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</a>
   <ul class="collapse">
-  <li><a href="#document-version" id="toc-document-version" class="nav-link" data-scroll-target="#document-version">Document Version</a></li>
-  <li><a href="#spss-version" id="toc-spss-version" class="nav-link" data-scroll-target="#spss-version">SPSS Version</a></li>
-  <li><a href="#textbook" id="toc-textbook" class="nav-link" data-scroll-target="#textbook">Textbook</a></li>
-  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <li><a href="#cooks-distance" id="toc-cooks-distance" class="nav-link" data-scroll-target="#cooks-distance"><span class="header-section-number">6.3.1</span> Cook’s distance</a></li>
+  <li><a href="#dfbetas" id="toc-dfbetas" class="nav-link" data-scroll-target="#dfbetas"><span class="header-section-number">6.3.2</span> DFBetas</a></li>
+  </ul></li>
+  <li><a href="#checking-with-spss" id="toc-checking-with-spss" class="nav-link" data-scroll-target="#checking-with-spss"><span class="header-section-number">6.4</span> Checking with SPSS</a>
   <ul class="collapse">
-  <li><a href="#workshop-1-week-13-getting-started-with-spss" id="toc-workshop-1-week-13-getting-started-with-spss" class="nav-link" data-scroll-target="#workshop-1-week-13-getting-started-with-spss">Workshop 1/ Week 13: Getting started with SPSS</a></li>
-  <li><a href="#workshop-2-week-14-descriptive-statistics-graphs-and-charts-in-spss" id="toc-workshop-2-week-14-descriptive-statistics-graphs-and-charts-in-spss" class="nav-link" data-scroll-target="#workshop-2-week-14-descriptive-statistics-graphs-and-charts-in-spss">Workshop 2/ Week 14: Descriptive statistics, graphs and charts in SPSS</a></li>
-  <li><a href="#workshop-3-week-15-crosstabs-and-two-independent-samples-t-test" id="toc-workshop-3-week-15-crosstabs-and-two-independent-samples-t-test" class="nav-link" data-scroll-target="#workshop-3-week-15-crosstabs-and-two-independent-samples-t-test">Workshop 3/ Week 15: Crosstabs and two independent samples t-test</a></li>
-  <li><a href="#workshop-4-week-16-anova-and-experimentation" id="toc-workshop-4-week-16-anova-and-experimentation" class="nav-link" data-scroll-target="#workshop-4-week-16-anova-and-experimentation">Workshop 4/ Week 16: ANOVA and Experimentation</a></li>
-  <li><a href="#workshop-5-week-17-regression" id="toc-workshop-5-week-17-regression" class="nav-link" data-scroll-target="#workshop-5-week-17-regression">Workshop 5/ Week 17: Regression</a></li>
+  <li><a href="#omitting-influential-observations" id="toc-omitting-influential-observations" class="nav-link" data-scroll-target="#omitting-influential-observations"><span class="header-section-number">6.4.1</span> Omitting Influential Observations</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -174,26 +172,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">MKTG402(3) Labs</h1>
+<h1 class="title"><span id="sec-lab6" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Influential Observations (to be launched in the academic year of 2025/26)</span></span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Ahmad Daryanto </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -201,54 +187,148 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a website for the workshops of MKTG402(3) - Introduction to Quantitative Research Methods for students at the Advanced Marketing Management (AMM) program at Lancaster University.</p>
-<p>Instructor: <a href="https://sites.google.com/view/ahmaddaryanto"><strong>Professor Ahmad Daryanto</strong></a></p>
-<section id="document-version" class="level2">
-<h2 class="anchored" data-anchor-id="document-version">Document Version</h2>
-<p>The pdf version of this document is available to download from Moodle.</p>
-</section>
-<section id="spss-version" class="level2">
-<h2 class="anchored" data-anchor-id="spss-version">SPSS Version</h2>
-<p>I am using SPSS version 28. You can use any SPSS versions (e.g., ver 26, 27, and 29), where the statistical procedures used in the labs are the same but the output formats are slightly different from those of version 28. Therefore, I recommend you to use version 28, so you can check whether your outputs are the same with those shown in this document.</p>
-</section>
-<section id="textbook" class="level2">
-<h2 class="anchored" data-anchor-id="textbook">Textbook</h2>
-<p>I do not use a specific textbook. Any marketing research or quantitative research textbook can be used for your self-learning, in particular, I recommend the following text:</p>
+<p>Data: RobotGLP.sav; Influential1.sav</p>
+<p>Data is available on ‘Workshop Materials’ folder on Moodle.</p>
+<section id="learning-objectives" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</h2>
+<p>The aim of this lab is to help you to use SPSS to identify influential observations.</p>
+<p>Learning objectives:</p>
+<p>At the end of this lab, I hope that you will</p>
 <ul>
-<li><p>Malhotra, N.K, Birks, D., and Wills, P. (2012) Marketing Research: An applied orientation, 4<sup>th</sup> edition, London: Prentice-Hall, Pearson. Other books on marketing research by Malhotra are also useful.</p></li>
-<li><p>Sarstedt, Marko and Erik Mooi (2014). A Concise Guide to Market Research. Springer. As the title says, this book is concise focusing statistical tests typically conducted in market research. The organization of the chapters in the book match closely with what we cover in this module. You can read the e-version of the first edition via our library website.</p></li>
-<li><p>Feinberg, Kinnear, and Taylor. (2013). Modern Marketing Research: Concept, Methods, and Cases, 2<sup>nd</sup> edition, Cengage. Written by excellent researchers in Marketing, I also like this book. It has plenty of mini cases that help readers to see the application of concepts in practices.</p></li>
+<li><p>Understand the concept of outlier, leverage and influence.</p></li>
+<li><p>Understand statistical measures used to detect influential observations.</p></li>
+<li><p>Know how to use SPSS to detect influential observations.</p></li>
 </ul>
-<hr>
 </section>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<section id="workshop-1-week-13-getting-started-with-spss" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-1-week-13-getting-started-with-spss"><a href="lab1.html">Workshop 1/ Week 13: Getting started with SPSS</a></h3>
-<p>Tasks: In this workshop, we will label variables, create new ones, and code scales.</p>
+<section id="the-foundation" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-foundation"><span class="header-section-number">6.2</span> The Foundation</h2>
+<p>We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called <em>univariate</em> outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, number £16k in the following record of advertising spending of 1k, 2k, 3k, 5k, 16k is an outlier. Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).</p>
+<p>In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in <span class="math inline">\(X's\)</span> are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of the <em>X</em> values can produce a high-leverage observation even though each value in <em>Xs</em> is not unusual.</p>
+<p>Observations with high leverage can pull the regression line toward themselves, even if their dependent variables are not univariate outliers.</p>
+<p>The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called <em>influential observations</em>.</p>
+<p>Consider a figure below:</p>
+<p>X has an extreme value that is far from other values of X (hence it has a high leverage), yet the Y value associated with X is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <strong>the inclusion of the high-leverage point distorts the original regression line that include all observations</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="lab6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the SPSS language, observations are called cases. These are rows in your SPSS data set. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology.</p>
+</div>
+</div>
+<p>Now, consider this figure. X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to X, the point is far away from the rest. Similarly, with respect to Y, the point is far away from the rest of Y. However, the regression line with and without do not substantially differ. In this case <strong>the high-leverage point is not influential because it does not distort the original regression line, which is the line that excludes the point</strong>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="lab6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Outliers have high leverage because they are far from the rest but not all high-leverage observations are influential.</p>
+</div>
+</div>
+<p>In a simple linear regression, we can use the scatter plot as demonstrated in the two figures above to visually inspect the potential present of influential observations. In multiple regression, this is not possible. Fortunately, there are statistical measures that we can use to detect influential observations. Two of the measures widely used in practice are <em>Cook’s distance</em> and <em>DFBetas</em>.</p>
 </section>
-<section id="workshop-2-week-14-descriptive-statistics-graphs-and-charts-in-spss" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-2-week-14-descriptive-statistics-graphs-and-charts-in-spss"><a href="lab2.html">Workshop 2/ Week 14: Descriptive statistics, graphs and charts in SPSS</a></h3>
-<p>Tasks: In this workshop, we will use SPSS to produce descriptive statistics, graphs and charts for different types of variables.</p>
+<section id="measures-of-influence" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</h2>
+<section id="cooks-distance" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="cooks-distance"><span class="header-section-number">6.3.1</span> Cook’s distance</h3>
+<p>Cook’s distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook’s distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a rule of thumb, an observation is considered influential if its Cook’s distance is greater than 1 (Chatterjee and Hadi, 2015). Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook’s distances that are much larger than those of the other observations.</p>
+</div>
+</div>
+<p>A closely related measure to the Cook’s distance is DFITS, which is also frequently reported in an empirical work. DFITS is another name for Welsch and Kuh’s Measure. Both measures are available on SPSS. Because their values are identical, we can report only one of them.</p>
 </section>
-<section id="workshop-3-week-15-crosstabs-and-two-independent-samples-t-test" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-3-week-15-crosstabs-and-two-independent-samples-t-test"><a href="lab3.html">Workshop 3/ Week 15: Crosstabs and two independent samples t-test</a></h3>
-<p>Tasks: This is the first of the bivariate analysis workshops. Here we will look at the analysis of 2 sets of nominal data in a cross tabulation and use a Chi-square test to determine whether a significant difference between the groups has occurred. In the second part of the workshop, we will look at the analysis of mean scores, i.e., comparing mean scores of two groups with two independent samples T-test.</p>
+<section id="dfbetas" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="dfbetas"><span class="header-section-number">6.3.2</span> DFBetas</h3>
+<p>The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large data, where <span class="math inline">\(n\)</span> is a sample size (Kutner, 2005).</p>
 </section>
-<section id="workshop-4-week-16-anova-and-experimentation" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-4-week-16-anova-and-experimentation"><a href="lab4.html">Workshop 4/ Week 16: ANOVA and Experimentation</a></h3>
-<p>Tasks: Here we will use SPSS to compare the mean scores of two or more nominal groups. Using one-way ANOVA, we will determine if significant differences exists between two groups or more. Then we will look two-way ANOVA, specifically a 2x3 ANOVA between-subject design.</p>
 </section>
-<section id="workshop-5-week-17-regression" class="level3">
-<h3 class="anchored" data-anchor-id="workshop-5-week-17-regression"><a href="lab5.html">Workshop 5/ Week 17: Regression</a></h3>
-<p>Tasks: Using correlation we will determine the nature of the association between two sets of interval or ratio data. Then using linear regressions, we will develop a model to examine the influence of a set of independent variables on one dependent variable.</p>
-<div style="page-break-after: always;"></div>
+<section id="checking-with-spss" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="checking-with-spss"><span class="header-section-number">6.4</span> Checking with SPSS</h2>
+<p>Data: Influential1.sav</p>
+<p>For an illustration, we use the above data. I used this data to produce the first scatter plot presented earlier.</p>
+<p>To calculate the Cook’s distance and DFbetas using SPSS, click <strong>Analyze</strong><span class="math inline">\(\rightarrow\)</span><strong>Regression</strong><span class="math inline">\(\rightarrow\)</span><strong>Linear</strong>. Enter the X and Y. Next, click <strong>Save</strong>. Under <code>Distances</code>, tick <code>Cook's</code>, and under <code>Influence Statistics</code>, tick <code>DFBetas</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cook1.png" class="img-fluid figure-img" width="585"></p>
+<figcaption class="figure-caption">Cook’s Distance and DFBetas</figcaption>
+</figure>
+</div>
+<p>Now, click <code>Continute</code> and <code>OK</code>. Inspect the data view.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cook2.png" class="img-fluid figure-img" width="585"></p>
+<figcaption class="figure-caption">One new colum for Cook’s Distance and two columns of DFBetas values of intercept and slope</figcaption>
+</figure>
+</div>
+<p>As we can see from the data view. Three new columns were added. First new column prints Cook’s distance for all observations. The Cook’s distances of the last observation is very large (14.934) while those of the remaining observations is smaller than 1. Next two columns are the DFBetas associated with the regression intercept (DFBO_1) and regression slope (DFB1_1) for all observations. For the last observation, its DFBO_1 is above 3 and its DFB1_1 is -1.699. Both are greater than 1 in an absolute term and very different than those of other observations. Using these information, we are confident that the last observation is an influential observation.</p>
+<section id="omitting-influential-observations" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="omitting-influential-observations"><span class="header-section-number">6.4.1</span> Omitting Influential Observations</h3>
+<p>Based on the results above, we can run regression by omitting influential observations. First, we need to select observations that are not influential. To do this, click <strong>Data</strong><span class="math inline">\(\rightarrow\)</span><strong>Select Cases</strong>. Tick <code>If condition is satisfied</code>. Tick <code>if</code>. Next, enter <strong>COO_1 &lt; 1 AND DFB0_1 &lt; 1 AND DFB1_1 &lt; 1</strong> (see figure below), and click <code>Continue</code>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cook3.png" class="img-fluid figure-img" width="585"></p>
+<figcaption class="figure-caption">Selecting observations whose measures below 1</figcaption>
+</figure>
+</div>
+<p>Now, inspect the data view. As we can see from the data view, the last observation is crossed out, which means that it is not included in subsequent analysis. Now, we can run regression as usual.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cook4.png" class="img-fluid figure-img" width="585"></p>
+<figcaption class="figure-caption">An influential observation is crossed out</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Task
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use RobotGLP.sav to inspect influential observations in this regression model:</p>
+<p>Intention to join the green LP = <span class="math inline">\(\beta_0\)</span> Anticipated Guilt + <span class="math inline">\(\beta_1\)</span> Perceived Attractiveness + <span class="math inline">\(\beta_2\)</span> Age + <span class="math inline">\(\beta_3\)</span> Gender + error.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="references"><span class="header-section-number">6.5</span> References</h2>
+<p>Chatterjee, S., &amp; Hadi, A. S. (2015). Regression analysis by example. John Wiley &amp; Sons.</p>
+<p>Kutner, M. H., Nachtsheim, C. J., Neter, J., &amp; Li, W. (2005). Applied linear statistical models. McGraw-hill.</p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -487,11 +567,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./lab5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Regression (Week 17)</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./lab1.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Getting started with SPSS (Week 13)</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

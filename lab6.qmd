@@ -1,184 +1,162 @@
-# Mediation Analysis (Extra) {#sec-lab6}
+# Influential Observations (to be launched in the academic year of 2025/26) {#sec-lab6}
 
-Data: RobotGLP.sav
+Data: RobotGLP.sav; Influential1.sav
 
 Data is available on 'Workshop Materials' folder on Moodle.
 
 ## Learning objectives
 
-This is an extra lab exercise that you do on your own time.
-
-The aim of this lab is to help you to use SPSS to conduct mediation analysis.
+The aim of this lab is to help you to use SPSS to identify influential observations.
 
 Learning objectives:
 
 At the end of this lab, I hope that you will
 
--   Understand the concept of mediation.
+-   Understand the concept of outlier, leverage and influence.
 
--   Understand the meaning of total effect, direct effect and indirect effect.
+-   Understand statistical measures used to detect influential observations.
 
--   Understand the Baron and Kenny's procedure in examining mediation effect and its limitation.
+-   Know how to use SPSS to detect influential observations.
 
--   Know how to use SPSS and interpret its outputs in mediation analysis.
+## The Foundation
 
--   Know how to test a mediation model using Process macro.
+We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called *univariate* outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, number £16k in the following record of advertising spending of 1k, 2k, 3k, 5k, 16k is an outlier. Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).
 
-## The Model
+In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in $X's$ are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of the *X* values can produce a high-leverage observation even though each value in *Xs* is not unusual.
 
-We start with the following model where consumers' environmental concerns (`EC`) is hypothesized to explain their intentions to join a green loyalty program (`Intention`).
+Observations with high leverage can pull the regression line toward themselves, even if their dependent variables are not univariate outliers.
 
-![Simple linear model](images/lab6_model1.png "Simple linear regression model"){#fig-slr fig-align="center" width="90%"}
+The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called *influential observations*.
 
-and the model in @fig-med with anticipated guilt (`Guilt`) being added.
+Consider a figure below:
 
-![Mediation model](images/lab6_model2.png){#fig-med fig-align="center" width="90%"}
+X has an extreme value that is far from other values of X (hence it has a high leverage), yet the Y value associated with X is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case **the inclusion of the high-leverage point distorts the original regression line that include all observations**.
 
-::: callout-note
-## Task
+```{r, echo=FALSE}
 
-From the two figures above, identify the independent variable, dependent variable, and mediator variable?
-:::
+x <- c(1.00, 1.5, 2, 3.00, 7.00)
+y <- c(3.00, 5.60, 6, 7.20, 5.50)
 
-::: callout-note
-## Task: Fill in the blank
+# Create data frame
+dat <- data.frame(x = x, y = y)
 
-If c in @fig-slr is the regression estimate that explains the impact of `EC` on `Intention`.
+# OLS model with all points
+model_all <- lm(y ~ x, data = dat)
 
-Write down the simple linear regression equation: .......... (**Model 1**).
-:::
+# OLS model excluding last point
+model_excl <- lm(y ~ x, data = dat[-nrow(dat), ])
 
-::: callout-note
-## Task: Fill in the blanks
+# Plot all points
+plot(dat$x, dat$y, 
+     main = "An outlier in X with high leverage and influential", 
+     xlab = "X", ylab = "Y", pch = 19, col = "black")
 
-From Figure @fig-med, write down regression equations that relate:
+# Add OLS line with all points
+abline(model_all, col = "grey", lwd = 2, lty = 1)
 
-1.  `Guilt` with `EC`: .......... (**Model 2**)
+# Add OLS line excluding last point
+abline(model_excl, col = "black", lwd = 2, lty = 2)
 
-2.  `Intention` with both `EC` and `Guilt`: .......... (**Model 3**)
-:::
-
-::: callout-note
-## Task: Fill in the blanks
-
-Identify
-
-1\. Total effect: .........
-
-2\. Direct effect: ..........
-
-3\. Indirect/mediated effect: .........., which is equal to c-c'.
-
-Thus, Total effect = .......... + ..........
-:::
-
-In this lab, we are going to use Baron and Kenny's procedure (1986)[^lab6-1] in examining the mediation effect. Note that nowadays this procedure loses its popularity in academic research because of its limitations. For example, the procedure assumes that the total effect of X on Y should be significant in the first place before proceeding to testing whether M affects the relationship. However, given this limitation, it is still important to appreciate this technique as it provides a basic understanding of a simple mediation model. Furthermore, in many cases, when mediation exists, the total effect of X on Y is significant.
-
-[^lab6-1]: Baron, Reuben M and David A. Kenny. 1986. The Moderator-mediator variable distinction in social psychological research: Conceptual strategic and statistical considerations. Journal of Personality and Social Psychology. 51(6), 1173-1182
+# Add legend
+legend("bottomright", legend = c("regression (all points)", "regression (excluding an outlier)"),
+       col = c("grey", "black"), lty = c(1, 2), lwd = 2)
+```
 
 ::: callout-note
-## Task: Fill in the blanks
-
-Given the models above, following the BK's procedure, there are three sets of preconditions that must be satisfied in mediation analysis, namely:
-
-1.  EC has a significant effect on .........
-
-2.  EC support has a significant effect on .........
-
-3.  Guilt has a significant effect on Intention when controlling for the effect of .........
+In the SPSS language, observations are called cases. These are rows in your SPSS data set. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology. 
 :::
 
-::: callout-note
-## Task: Fill in the blanks
+Now, consider this figure. X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to X, the point is far away from the rest. Similarly, with respect to Y, the point is far away from the rest of Y. However, the regression line with and without do not substantially differ. In this case **the high-leverage point is not influential because it does not distort the original regression line, which is the line that excludes the point**.
 
-To investigate the three preconditions in the previous task, we use regression analysis, in which:
+```{r, echo=FALSE}
+x <- c(1.00, 1.5, 2, 3.00, 7.00)
+y <- c(3.00, 5.60, 6, 7.20, 15.50)
 
-Precondition 1 is tested via running a regression model as seen in Figure .....
+# Create data frame
+dat <- data.frame(x = x, y = y)
 
-Precondition 2 is tested via running a regression model as seen in Figure .....
+# OLS model with all points
+model_all <- lm(y ~ x, data = dat)
 
-Precondition 3 is tested via running a regression model as seen in Figure .....
+# OLS model excluding last point
+model_excl <- lm(y ~ x, data = dat[-nrow(dat), ])
+
+# Plot all points
+plot(dat$x, dat$y, 
+     main = "An outlier in X with high leverage but  uninfluential", 
+     xlab = "X", ylab = "Y", pch = 19, col = "black")
+
+# Add OLS line with all points
+abline(model_all, col = "grey", lwd = 2, lty = 1)
+
+# Add OLS line excluding last point
+abline(model_excl, col = "black", lwd = 2, lty = 2)
+
+# Add legend
+legend("bottomright", legend = c("regression (all points)", "regression (excluding an outlier)"),
+       col = c("grey", "black"), lty = c(1, 2), lwd = 2)
+```
+
+::: callout-warning
+## Important
+
+Outliers have high leverage because they are far from the rest but not all high-leverage observations are influential.
 :::
 
-::: callout-note
-## Task
+In a simple linear regression, we can use the scatter plot as demonstrated in the two figures above to visually inspect the potential present of influential observations. In multiple regression, this is not possible. Fortunately, there are statistical measures that we can use to detect influential observations. Two of the measures widely used in practice are *Cook's distance* and *DFBetas*.
 
-Use SPSS to check for the above preconditions. Insert regression standardized estimates and their standard errors replacing the question marks into the figures below and put asterisk next to it if the coefficients are significant (e.g., 0.32(0.12)**,** p\<0.05. 0.32 is a standardized estimate and 0.12 is a standard error and the coefficient is significant because its p-value is less than 0.05).
+## Measures of Influence
 
-![Replace the question marks with numbers](images/lab6_model3.png){fig-align="center" width="90%"}
-:::
+### Cook's distance
 
-## Sobel's test
-
-Next, to assess whether mediation effect is significant, Baron and Kenny (1986) recommended researchers to directly assess whether the product $a*b$ is significant by using a Sobel's test.
-
-Use the online Sobel's test by clicking this link <http://quantpsy.org/sobel/sobel.htm>. To implement the Sobel's test, you need to use the **unstandardized** estimates and their **standard errors**. But before inputting numbers into the above website, please put the necessary information in the table below:
-
-::: callout-note
-##Task: Fill in the blanks
-
-| Unstandardized estimate | Standard error |
-|-------------------------|----------------|
-| $a$ =                   | $S_a$ =        |
-| $b$ =                   | $S_b$ =        |
-
-Now, run the Sobel's test.
-
-What do you conclude??
-:::
-
-The Sobel's test assumes that the path coefficients a, b to be normally distributed but the product a\*b need not normally distributed. Because of this reason researchers abandon this test and opt for a modern method of testing mediation explained in the next section.
-
-## Using Process Macro (additional)
-
-Go to this website <http://processmacro.org/download.html>, and download the Process macro, and install it onto your SPSS. The procedure of installing the macro is the same the one you did before when installing my heteroskedasticityV3 macro in the previous lab. So, if you managed to install my macro, you should be able to install this macro easily.
-
-We are going to use this macro to test our mediation model. By using this macro, you do not need to follow the three steps procedure suggested by Baron and Kenny (1986). The macro implements what a so called 'Bootstrapping' technique. Bootstrapping is a resampling technique where your data is treated as a population, and the macro keeps taking samples from your data with replacement according a pre-specified number (the default of the program is 5000 samples). For each sample, the macro computes $a$, $b$, and the product $a*b$. Therefore, by having 5000 samples, there would be 5000 values of product $a*b$. Using these 5000 values of the product $a*b$, the macro calculates the confidence interval for the product $a*b$ -- it is called a bootstrap confidence interval. **If the interval does not include zero, the mediation effect is significant**.
-
-::: callout-tip
-By default, the Process macros set the level of bootstrap confidence at 95% level. You can change this value but 95% is commonly used, therefore, leave the default as it is.
-
-For example, if the 95% bootstrap confidence interval for the size of the mediation effect is \[0.04;0.25\]. This means that we are 95% confident that the effect lies from 0.04 to 0.25.
-:::
+Cook's distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook's distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation.
 
 ::: callout-important
-If the bootstrap confidence interval includes zero, the mediation effect is **not** significant.
-
-For example, if the confidence interval is \[-0.3; 0.2\], the mediation effect is not significant.
+As a rule of thumb, an observation is considered influential if its Cook's distance is greater than 1 (Chatterjee and Hadi, 2015). Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook's distances that are much larger than those of the other observations.
 :::
 
-### Running the Process Macro
+A closely related measure to the Cook's distance is DFITS, which is also frequently reported in an empirical work. DFITS is another name for Welsch and Kuh's Measure. Both measures are available on SPSS. Because their values are identical, we can report only one of them.
 
--   Click **Analyze**$\rightarrow$**Regression**$\rightarrow$**Process**
+### DFBetas
 
--   Insert `Intent` into `Y-variable` box.
+The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and $\frac{2}{\sqrt(n)}$ for large data, where $n$ is a sample size (Kutner, 2005).
 
--   Insert 'EC`into`X-variable\` box.
+## Checking with SPSS
 
--   Insert 'Guilt' into 'Mediators(M)' box.
+Data: Influential1.sav
 
--   Change `Model number` to 4.
+For an illustration, we use the above data. I used this data to produce the first scatter plot presented earlier.
 
--   If you manage to follow these steps, on your SPSS screen, you should see the figure below
+To calculate the Cook's distance and DFbetas using SPSS, click **Analyze**$\rightarrow$**Regression**$\rightarrow$**Linear**. Enter the X and Y. Next, click **Save**. Under `Distances`, tick `Cook's`, and under `Influence Statistics`, tick `DFBetas`.
 
--   Click `OK` -- inspect the outputs.
+![Cook's Distance and DFBetas](images/cook1.png){width="585"}
 
-![Process Macro](images/lab6_process_win.png){fig-align="center" width="90%"}
+Now, click `Continute` and `OK`. Inspect the data view.
 
-### Outputs
+![One new colum for Cook's Distance and two columns of DFBetas values of intercept and slope](images/cook2.png){width="585"}
 
-Inspect the outputs. The most important output to look at is the last part of the outputs -- see @fig-processout. It gives you the size of the mediation effect ($a*b=0.133$), and the lower and upper limit of the bootstrap confidence interval (0.04; 0.25). Because the 95% bootstrap confidence interval does not include zero, the mediation effect is significant.
+As we can see from the data view. Three new columns were added. First new column prints Cook's distance for all observations. The Cook's distances of the last observation is very large (14.934) while those of the remaining observations is smaller than 1. Next two columns are the DFBetas associated with the regression intercept (DFBO_1) and regression slope (DFB1_1) for all observations. For the last observation, its DFBO_1 is above 3 and its DFB1_1 is -1.699. Both are greater than 1 in an absolute term and very different than those of other observations. Using these information, we are confident that the last observation is an influential observation.
 
-![Last part of the Process macro's outputs](images/lab6_process_out.png){#fig-processout fig-align="center" width="90%"}
+### Omitting Influential Observations
+
+Based on the results above, we can run regression by omitting influential observations. First, we need to select observations that are not influential. To do this, click **Data**$\rightarrow$**Select Cases**. Tick `If condition is satisfied`. Tick `if`. Next, enter **COO_1 \< 1 AND DFB0_1 \< 1 AND DFB1_1 \< 1** (see figure below), and click `Continue`.
+
+![Selecting observations whose measures below 1](images/cook3.png){width="585"}
+
+Now, inspect the data view. As we can see from the data view, the last observation is crossed out, which means that it is not included in subsequent analysis. Now, we can run regression as usual.
+
+![An influential observation is crossed out](images/cook4.png){width="585"}
 
 ::: callout-note
 ## Task
 
-Look at the other parts of the Process macro's outputs in your SPSS.
+Use RobotGLP.sav to inspect influential observations in this regression model:
 
-I want you to interpret the outputs of the macro in the other blocks, most importantly under
-
-1.  `OUTCOME VARIABLE: Guilt` and
-
-2.  `OUTCOME VARIABLE: Intent`
+Intention to join the green LP = $\beta_0$ Anticipated Guilt + $\beta_1$ Perceived Attractiveness + $\beta_2$ Age + $\beta_3$ Gender + error.
 :::
+
+## References
+
+Chatterjee, S., & Hadi, A. S. (2015). Regression analysis by example. John Wiley & Sons.
+
+Kutner, M. H., Nachtsheim, C. J., Neter, J., & Li, W. (2005). Applied linear statistical models. McGraw-hill.
