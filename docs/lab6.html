@@ -202,7 +202,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-foundation" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-foundation"><span class="header-section-number">6.2</span> The Foundation</h2>
-<p>We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called <em>univariate</em> outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, number £16k in the following record of advertising spending of 1k, 2k, 3k, 5k, 16k is an outlier. Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).</p>
+<p>We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called <em>univariate</em> outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, the number £16k in the following record of advertising spending – 1k, 2k, 3k, 5k, 16k —, is an outlier (see <a href="#fig-boxplot">Figure&nbsp;<span>6.1</span></a>). Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-boxplot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab6_files/figure-html/fig-boxplot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.1: Value 16 is a univariate outlier</figcaption>
+</figure>
+</div>
+</div>
+</div>
 <p>In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in <span class="math inline">\(x\)</span> are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of several X variables can produce a high-leverage observation, even if none of the X variables contain outliers. Leverage is a property of values in X only, not Y.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -219,14 +229,14 @@ Important
 </div>
 <p>Observations with high leverage can pull the regression line toward themselves, even if their <em>Y</em> values are not univariate outliers.</p>
 <p>The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called <em>influential observations</em>.</p>
-<p>Consider <a href="#fig-influential">Figure&nbsp;<span>6.1</span></a>. below:</p>
+<p>Consider <a href="#fig-influential">Figure&nbsp;<span>6.2</span></a>. below:</p>
 <p>X has an extreme value that is far from other values of <span class="math inline">\(x\)</span> (hence it has a high leverage), yet the <span class="math inline">\(y\)</span>-value associated with <span class="math inline">\(x\)</span> is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <strong>the inclusion of the high-leverage point distorts the original regression line – line that includes all observations</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-influential" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="lab6_files/figure-html/fig-influential-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.1: An outlier in X with high leverage and influential</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.2: An outlier in X with high leverage and influential</figcaption>
 </figure>
 </div>
 </div>
@@ -244,14 +254,14 @@ Note
 <p>In the SPSS language, observations are called cases. These are rows in your SPSS dataset. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology.</p>
 </div>
 </div>
-<p>Now, consider <a href="#fig-notinfluential">Figure&nbsp;<span>6.2</span></a>.</p>
+<p>Now, consider <a href="#fig-notinfluential">Figure&nbsp;<span>6.3</span></a>.</p>
 <p>X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to <span class="math inline">\(x\)</span>, the point is far away from the rest. Similarly, with respect to <span class="math inline">\(y\)</span>, the point is far away from the rest of <span class="math inline">\(y\)</span>. However, the regression line with and without the outlier do not substantially differ. In this case <strong>the high-leverage point is not influential because it does not distort the original regression line</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-notinfluential" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="lab6_files/figure-html/fig-notinfluential-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: An outlier in X with high leverage but uninfluential</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;6.3: An outlier in X with high leverage but uninfluential</figcaption>
 </figure>
 </div>
 </div>

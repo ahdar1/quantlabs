@@ -20,7 +20,18 @@ At the end of this lab, I hope that you will
 
 ## The Foundation
 
-We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called *univariate* outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, number £16k in the following record of advertising spending of 1k, 2k, 3k, 5k, 16k is an outlier. Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).
+We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called *univariate* outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, the number £16k in the following record of advertising spending -- 1k, 2k, 3k, 5k, 16k ---, is an outlier (see @fig-boxplot). Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).
+
+```{r, echo=FALSE}
+#| label: fig-boxplot
+#| fig-cap: "Value 16 is a univariate outlier"
+x <- c(1,2,3,5,16)
+boxplot(x)
+# Add text to indicate the outlier
+text(15, labels="Outlier", pos=4, col="red") 
+
+```
+
 
 In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in $x$ are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of several X variables can produce a high-leverage observation, even if none of the X variables contain outliers. Leverage is a property of values in X only, not Y.
 
