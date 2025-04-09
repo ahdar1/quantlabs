@@ -1,4 +1,4 @@
-# Influential Observations (to be launched in the academic year of 2025/26) {#sec-lab6}
+# Influential Observations (to be deployed in the academic year of 2025/26) {#sec-lab6}
 
 Data: RobotGLP.sav; Influential1.sav
 
@@ -58,6 +58,9 @@ plot(dat$x, dat$y,
      main = "An outlier in X with high leverage and influential", 
      xlab = "X", ylab = "Y", pch = 19, col = "black")
 
+# Add text to indicate the outlier
+text(6.5, 5.2, labels="Outlier", pos=4, col="red") 
+
 # Add OLS line with all points
 abline(model_all, col = "grey", lwd = 2, lty = 1)
 
@@ -96,6 +99,9 @@ model_excl <- lm(y ~ x, data = dat[-nrow(dat), ])
 plot(dat$x, dat$y, 
      main = "An outlier in X with high leverage but uninfluential", 
      xlab = "X", ylab = "Y", pch = 19, col = "black")
+
+# Add text to indicate the outlier
+text(6.1, 15.2, labels="Outlier", pos=4, col="red") 
 
 # Add OLS line with all points
 abline(model_all, col = "grey", lwd = 2, lty = 1)
