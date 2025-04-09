@@ -26,7 +26,8 @@ We have learned in the previous workshop that we can use a boxplot to detect out
 #| label: fig-boxplot
 #| fig-cap: "Value 16 is a univariate outlier"
 x <- c(1,2,3,5,16)
-boxplot(x)
+boxplot(x,  col = "dodgerblue")
+
 # Add text to indicate the outlier
 text(15, labels="Outlier", pos=4, col="red") 
 
@@ -192,3 +193,5 @@ Intention to join the green LP = $\beta_0$ Anticipated Guilt + $\beta_1$ Perceiv
 Chatterjee, S., & Hadi, A. S. (2015). Regression analysis by example. John Wiley & Sons.
 
 Kutner, M. H., Nachtsheim, C. J., Neter, J., & Li, W. (2005). Applied linear statistical models. McGraw-hill.
+
+
