@@ -42,11 +42,11 @@ Leverage refers to how far an observation's $x$-values are from the mean of all 
 
 Observations with high leverage can pull the regression line toward themselves, even if their *Y* values are not univariate outliers.
 
-The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called *influential observations*.
+The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called **influential observations**.
 
 Consider @fig-influential. below:
 
-X has an extreme value that is far from other values of $x$ (hence it has a high leverage), yet the $y$-value associated with $x$ is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case **the inclusion of the high-leverage point distorts the original regression line -- line that includes all observations**.
+X has an extreme value that is far from other values of $x$ (hence it has a high leverage), yet the $y$-value associated with $x$ is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case *the inclusion of the high-leverage point distorts the original regression line -- line that includes all observations*.
 
 ```{r, echo=FALSE}
 #| label: fig-influential
@@ -89,7 +89,7 @@ In the SPSS language, observations are called cases. These are rows in your SPSS
 
 Now, consider @fig-notinfluential. 
 
-X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to $x$, the point is far away from the rest. Similarly, with respect to $y$, the point is far away from the rest of $y$. However, the regression line with and without the outlier do not substantially differ. In this case **the high-leverage point is not influential because it does not distort the original regression line**.
+X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to $x$, the point is far away from the rest. Similarly, with respect to $y$, the point is far away from the rest of $y$. However, the regression line with and without the outlier do not substantially differ. In this case, *the high-leverage point is not influential because it does not distort the original regression line*.
 
 ```{r, echo=FALSE}
 #| label: fig-notinfluential

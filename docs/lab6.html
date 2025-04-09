@@ -237,9 +237,9 @@ Important
 </div>
 </div>
 <p>Observations with high leverage can pull the regression line toward themselves, even if their <em>Y</em> values are not univariate outliers.</p>
-<p>The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called <em>influential observations</em>.</p>
+<p>The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called <strong>influential observations</strong>.</p>
 <p>Consider <a href="#fig-influential">Figure&nbsp;<span>6.2</span></a>. below:</p>
-<p>X has an extreme value that is far from other values of <span class="math inline">\(x\)</span> (hence it has a high leverage), yet the <span class="math inline">\(y\)</span>-value associated with <span class="math inline">\(x\)</span> is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <strong>the inclusion of the high-leverage point distorts the original regression line – line that includes all observations</strong>.</p>
+<p>X has an extreme value that is far from other values of <span class="math inline">\(x\)</span> (hence it has a high leverage), yet the <span class="math inline">\(y\)</span>-value associated with <span class="math inline">\(x\)</span> is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <em>the inclusion of the high-leverage point distorts the original regression line – line that includes all observations</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-influential" class="quarto-figure quarto-figure-center anchored">
@@ -264,7 +264,7 @@ Note
 </div>
 </div>
 <p>Now, consider <a href="#fig-notinfluential">Figure&nbsp;<span>6.3</span></a>.</p>
-<p>X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to <span class="math inline">\(x\)</span>, the point is far away from the rest. Similarly, with respect to <span class="math inline">\(y\)</span>, the point is far away from the rest of <span class="math inline">\(y\)</span>. However, the regression line with and without the outlier do not substantially differ. In this case <strong>the high-leverage point is not influential because it does not distort the original regression line</strong>.</p>
+<p>X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to <span class="math inline">\(x\)</span>, the point is far away from the rest. Similarly, with respect to <span class="math inline">\(y\)</span>, the point is far away from the rest of <span class="math inline">\(y\)</span>. However, the regression line with and without the outlier do not substantially differ. In this case, <em>the high-leverage point is not influential because it does not distort the original regression line</em>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-notinfluential" class="quarto-figure quarto-figure-center anchored">
