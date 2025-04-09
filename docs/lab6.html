@@ -153,7 +153,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">6.1</span> Learning objectives</a></li>
-  <li><a href="#the-foundation" id="toc-the-foundation" class="nav-link" data-scroll-target="#the-foundation"><span class="header-section-number">6.2</span> The Foundation</a></li>
+  <li><a href="#the-foundation" id="toc-the-foundation" class="nav-link" data-scroll-target="#the-foundation"><span class="header-section-number">6.2</span> The Foundation</a>
+  <ul class="collapse">
+  <li><a href="#outlier" id="toc-outlier" class="nav-link" data-scroll-target="#outlier"><span class="header-section-number">6.2.1</span> Outlier</a></li>
+  <li><a href="#leverage-and-influence" id="toc-leverage-and-influence" class="nav-link" data-scroll-target="#leverage-and-influence"><span class="header-section-number">6.2.2</span> Leverage and Influence</a></li>
+  </ul></li>
   <li><a href="#measures-of-influence" id="toc-measures-of-influence" class="nav-link" data-scroll-target="#measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</a>
   <ul class="collapse">
   <li><a href="#cooks-distance" id="toc-cooks-distance" class="nav-link" data-scroll-target="#cooks-distance"><span class="header-section-number">6.3.1</span> Cook’s distance</a></li>
@@ -202,6 +206,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="the-foundation" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-foundation"><span class="header-section-number">6.2</span> The Foundation</h2>
+<section id="outlier" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="outlier"><span class="header-section-number">6.2.1</span> Outlier</h3>
 <p>We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called <em>univariate</em> outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, the number £16k in the following record of advertising spending – 1k, 2k, 3k, 5k, 16k —, is an outlier (see <a href="#fig-boxplot">Figure&nbsp;<span>6.1</span></a>). Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -213,6 +219,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</section>
+<section id="leverage-and-influence" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="leverage-and-influence"><span class="header-section-number">6.2.2</span> Leverage and Influence</h3>
 <p>In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in <span class="math inline">\(x\)</span> are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of several X variables can produce a high-leverage observation, even if none of the X variables contain outliers. Leverage is a property of values in X only, not Y.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -280,6 +289,7 @@ Important
 </div>
 </div>
 <p>In a simple linear regression, we can use a scatter plot, as demonstrated in the two figures above, to visually inspect the potential present of influential observations. In multiple regression, this is not possible. Fortunately, there are statistical measures that we can use to detect influential observations. The most popular ones are <em>Cook’s distance</em> and <em>DFBetas</em>.</p>
+</section>
 </section>
 <section id="measures-of-influence" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</h2>
