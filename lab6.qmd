@@ -155,7 +155,9 @@ As a rule of thumb, an observation is considered influential if the absolute val
 
 Data: Influential1.sav
 
-For an illustration, we use the above data. I used this data to produce the first scatter plot presented earlier.
+![Data](images/influential1.png){width="200"}
+
+For an illustration, we use the above data, which contains only 5 observations. I used this data to produce the first scatter plot presented earlier.
 
 To calculate the Cook's distance and DFbetas using SPSS, click **Analyze**$\rightarrow$**Regression**$\rightarrow$**Linear**. Enter the X and Y. Next, click **Save**. Under `Distances`, tick `Cook's`, and under `Influence Statistics`, tick `DFBetas`.
 
