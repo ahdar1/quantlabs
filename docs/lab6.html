@@ -203,14 +203,32 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-foundation" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="the-foundation"><span class="header-section-number">6.2</span> The Foundation</h2>
 <p>We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called <em>univariate</em> outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, number £16k in the following record of advertising spending of 1k, 2k, 3k, 5k, 16k is an outlier. Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).</p>
-<p>In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in <span class="math inline">\(X's\)</span> are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of the <em>X</em> values can produce a high-leverage observation even though each value in <em>Xs</em> is not unusual.</p>
-<p>Observations with high leverage can pull the regression line toward themselves, even if their dependent variables are not univariate outliers.</p>
+<p>In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in <span class="math inline">\(x\)</span> are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of several X variables can produce a high-leverage observation, even if none of the X variables contain outliers. Leverage is a property of values in X only, not Y.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Leverage refers to how far an observation’s <span class="math inline">\(x\)</span>-values are from the mean of all <span class="math inline">\(x\)</span>-values. The mean of <span class="math inline">\(x\)</span>-values is calculated using all data point including the outliers’ <span class="math inline">\(x\)</span>-values.</p>
+</div>
+</div>
+<p>Observations with high leverage can pull the regression line toward themselves, even if their <em>Y</em> values are not univariate outliers.</p>
 <p>The high-leverage observations can change the regression results (e.g., by altering coefficient estimates). Because of this, they are called <em>influential observations</em>.</p>
-<p>Consider a figure below:</p>
-<p>X has an extreme value that is far from other values of X (hence it has a high leverage), yet the Y value associated with X is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <strong>the inclusion of the high-leverage point distorts the original regression line that include all observations</strong>.</p>
+<p>Consider <a href="#fig-influential">Figure&nbsp;<span>6.1</span></a>. below:</p>
+<p>X has an extreme value that is far from other values of <span class="math inline">\(x\)</span> (hence it has a high leverage), yet the <span class="math inline">\(y\)</span>-value associated with <span class="math inline">\(x\)</span> is not extreme. Excluding this outlier from regression produce a regression line represented by the dash line in the figure. Including the outlier produces a regression line represented by a solid line, which is really different from the dash line as if the outlier pulls the dash line toward it. In this case <strong>the inclusion of the high-leverage point distorts the original regression line – line that includes all observations</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="lab6_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
+<div id="fig-influential" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab6_files/figure-html/fig-influential-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.1: An outlier in X with high leverage and influential</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -223,13 +241,19 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the SPSS language, observations are called cases. These are rows in your SPSS data set. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology.</p>
+<p>In the SPSS language, observations are called cases. These are rows in your SPSS dataset. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology.</p>
 </div>
 </div>
-<p>Now, consider this figure. X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to X, the point is far away from the rest. Similarly, with respect to Y, the point is far away from the rest of Y. However, the regression line with and without do not substantially differ. In this case <strong>the high-leverage point is not influential because it does not distort the original regression line, which is the line that excludes the point</strong>.</p>
+<p>Now, consider <a href="#fig-notinfluential">Figure&nbsp;<span>6.2</span></a>.</p>
+<p>X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to <span class="math inline">\(x\)</span>, the point is far away from the rest. Similarly, with respect to <span class="math inline">\(y\)</span>, the point is far away from the rest of <span class="math inline">\(y\)</span>. However, the regression line with and without the outlier do not substantially differ. In this case <strong>the high-leverage point is not influential because it does not distort the original regression line</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="lab6_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<div id="fig-notinfluential" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab6_files/figure-html/fig-notinfluential-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.2: An outlier in X with high leverage but uninfluential</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -242,16 +266,16 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Outliers have high leverage because they are far from the rest but not all high-leverage observations are influential.</p>
+<p>Outliers are observations with high leverage because they are far from mean of all <span class="math inline">\(x\)</span>-values but not all high-leverage observations are influential.</p>
 </div>
 </div>
-<p>In a simple linear regression, we can use the scatter plot as demonstrated in the two figures above to visually inspect the potential present of influential observations. In multiple regression, this is not possible. Fortunately, there are statistical measures that we can use to detect influential observations. Two of the measures widely used in practice are <em>Cook’s distance</em> and <em>DFBetas</em>.</p>
+<p>In a simple linear regression, we can use a scatter plot, as demonstrated in the two figures above, to visually inspect the potential present of influential observations. In multiple regression, this is not possible. Fortunately, there are statistical measures that we can use to detect influential observations. The most popular ones are <em>Cook’s distance</em> and <em>DFBetas</em>.</p>
 </section>
 <section id="measures-of-influence" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="measures-of-influence"><span class="header-section-number">6.3</span> Measures of Influence</h2>
 <section id="cooks-distance" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="cooks-distance"><span class="header-section-number">6.3.1</span> Cook’s distance</h3>
-<p>Cook’s distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from the full data and the fitted values obtained by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook’s distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook’s distance associated with each observation in a data set.</p>
+<p>Cook’s distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from regression with the full data and the fitted values obtained from regression by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook’s distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook’s distance associated with each observation in a dataset.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -262,15 +286,15 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As a rule of thumb, an observation is considered influential if its Cook’s distance is greater than 1 (Chatterjee and Hadi, 2015). Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook’s distances that are much larger than those of the other observations.</p>
+<p>As a rule of thumb, an observation is considered influential if its Cook’s distance is greater than 1. Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook’s distances that are much larger than those of the other observations (Chatterjee and Hadi, 2015).</p>
 </div>
 </div>
 <p>A closely related measure to the Cook’s distance is DFITS, which is also frequently reported in an empirical work. DFITS is another name for Welsch and Kuh’s Measure. Both measures are available on SPSS. Because their values are identical, we can report only one of them.</p>
 </section>
 <section id="dfbetas" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="dfbetas"><span class="header-section-number">6.3.2</span> DFBetas</h3>
-<p>The DFBetas measures the difference between an estimated regression coefficient obtained from full data and the regression coefficient obtained when a particular observation is deleted. SPSS will calculate DFBetas for every observations. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.</p>
-<p>As a rule of thumb, an observation is considered influential if the absolute value of DFBETAS exceeds 1 for small to medium data and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large data, where <span class="math inline">\(n\)</span> is a sample size (Kutner, 2005).</p>
+<p>The DFBetas (singular: DFBeta) assess the change in a regression coefficient when a particular observation is deleted. SPSS will calculate DFBetas for every observation. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.</p>
+<p>As a rule of thumb, an observation is considered influential if the absolute value of its DFBETAS exceeds 1 for small to medium datasets and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large datasets, where <span class="math inline">\(n\)</span> is the sample size (Kutner, 2005).</p>
 </section>
 </section>
 <section id="checking-with-spss" class="level2" data-number="6.4">
