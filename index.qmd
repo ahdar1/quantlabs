@@ -16,6 +16,8 @@ I am using SPSS version 28. You can use any SPSS versions (e.g., ver 26, 27, and
 
 I do not use a specific textbook. Any marketing research or quantitative research textbook can be used for your self-learning, in particular, I recommend the following text:
 
+-  Daryanto, Ahmad. (2025), ‘An Introduction to Quantitative Research Methods for Marketing: Tools and Techniques Using SPSS and R’, 1st Edition, Routledge. This book is written by yours truly. It will be useful for those who wants to learn SPSS in more depth and R.  As stated in the publisher website, this is “a very applied text designed to make this complex subject accessible to students with no background in quantitative methods, this book is valuable recommended and core reading for advanced undergraduate and postgraduate.”
+
 -   Malhotra, N.K, Birks, D., and Wills, P. (2012) Marketing Research: An applied orientation, 4^th^ edition, London: Prentice-Hall, Pearson. Other books on marketing research by Malhotra are also useful.
 
 -   Sarstedt, Marko and Erik Mooi (2014). A Concise Guide to Market Research. Springer. As the title says, this book is concise focusing statistical tests typically conducted in market research. The organization of the chapters in the book match closely with what we cover in this module. You can read the e-version of the first edition via our library website.
