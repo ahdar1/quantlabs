@@ -27,7 +27,7 @@ I am using SPSS version 28. You can use any SPSS versions (e.g., ver 26, 27, and
 
 ::: {.column width="60%"}
 
-Daryanto, Ahmad. (2025), ‘An Introduction to Quantitative Research Methods for Marketing: Tools and Techniques Using SPSS and R’, 1st Edition, Routledge. This book is written by yours truly. It will be useful for those who wants to learn SPSS in more depth and R. As stated in the publisher website, this is “a very applied text designed to make this complex subject accessible to students with no background in quantitative methods, this book is valuable recommended and core reading for advanced undergraduate and postgraduate.” The book can be accessed via this link [https://ebookcentral.proquest.com/lib/lancaster/detail.action?docID=31807359](https://ebookcentral.proquest.com/lib/lancaster/detail.action?docID=31807359) or [OneSearch](https://onesearch.lancaster-university.uk/discovery/search?vid=44LAN_INST:LUL_VU1) 
+Daryanto, Ahmad. (2025), ‘An Introduction to Quantitative Research Methods for Marketing: Tools and Techniques Using SPSS and R’, 1st Edition, Routledge. This book is written by yours truly. It will be useful for those who wants to learn SPSS in more depth and R. As stated in the publisher website, this is “a very applied text designed to make this complex subject accessible to students with no background in quantitative methods, this book is valuable recommended and core reading for advanced undergraduate and postgraduate.” The book can be accessed via  [ProQuest Ebook Central](https://ebookcentral.proquest.com/lib/lancaster/detail.action?docID=31807359) or [OneSearch](https://onesearch.lancaster-university.uk/discovery/search?vid=44LAN_INST:LUL_VU1). 
 
 :::
 :::
