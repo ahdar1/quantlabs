@@ -1,4 +1,4 @@
-# Influential Observations (to be deployed in the academic year of 2025/26) {#sec-lab6}
+# Influential Observations (to be deployed in the academic year 2025/26) {#sec-lab6}
 
 Data: RobotGLP.sav; Influential1.sav
 
