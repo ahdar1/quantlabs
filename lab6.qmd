@@ -19,7 +19,9 @@ At the end of this lab, I hope that you will
 -   Know how to use SPSS to detect influential observations.
 
 ## The Foundation
+
 ### Outlier
+
 We have learned in the previous workshop that we can use a boxplot to detect outliers. These outliers are called *univariate* outliers because their values are either unusually low or extremely large compared to other values in that particular variable. For example, the number £16k in the following record of advertising spending -- 1k, 2k, 3k, 5k, 16k ---, is an outlier (see @fig-boxplot). Outliers can occur due to human negligence, such as typing errors or sampling unexpected individuals (e.g., Bill Gates visiting Lancaster and taking part in a travel spending survey).
 
 ```{r, echo=FALSE}
@@ -32,13 +34,13 @@ boxplot(x,  col = "dodgerblue")
 text(15, labels="Outlier", pos=4, col="red") 
 
 ```
+
 ### Leverage and Influence
 
 In multiple regression that involves multiple independent variables, the concept of leverage is introduced to measure how unusual values in $x$ are compared to the rest. Observations that are unusually low or high is considered to have a high leverage. Nevertheless, the combination of several X variables can produce a high-leverage observation, even if none of the X variables contain outliers. Leverage is a property of values in X only, not Y.
 
 ::: callout-important
-Leverage refers to how far an observation's $x$-values are from the mean of all  $x$-values. The mean of $x$-values is calculated using all data point including the outliers' $x$-values.
-
+Leverage refers to how far an observation's $x$-values are from the mean of all $x$-values. The mean of $x$-values is calculated using all data point including the outliers' $x$-values.
 :::
 
 Observations with high leverage can pull the regression line toward themselves, even if their *Y* values are not univariate outliers.
@@ -85,10 +87,10 @@ legend("bottomright", legend = c("regression (all points)", "regression (excludi
 ```
 
 ::: callout-note
-In the SPSS language, observations are called cases. These are rows in your SPSS dataset. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology. 
+In the SPSS language, observations are called cases. These are rows in your SPSS dataset. As majority of textbook and academic articles use observations instead of cases, I adopt the former terminology.
 :::
 
-Now, consider @fig-notinfluential. 
+Now, consider @fig-notinfluential.
 
 X has also a high leverage point associated with high Y value printed on the right side of the graph. With respect to $x$, the point is far away from the rest. Similarly, with respect to $y$, the point is far away from the rest of $y$. However, the regression line with and without the outlier do not substantially differ. In this case, *the high-leverage point is not influential because it does not distort the original regression line*.
 
@@ -138,7 +140,7 @@ In a simple linear regression, we can use a scatter plot, as demonstrated in the
 
 ### Cook's distance
 
-Cook's distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from regression with the full data and the fitted values obtained from regression by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook's distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook's distance associated with each observation in a dataset. 
+Cook's distance was proposed by Cook (1977). It measures the difference between the fitted values obtained from regression with the full data and the fitted values obtained from regression by deleting a particular observation. Because fitted values are calculated using all regression coefficient estimates, the Cook's distance also tells the difference between the regression coefficient estimates obtained from full data and the regression coefficient estimates obtained by deleting the particular observation. SPSS will calculate a Cook's distance associated with each observation in a dataset.
 
 ::: callout-important
 As a rule of thumb, an observation is considered influential if its Cook's distance is **greater than 1**. Nevertheless, the rule is not strict, in practice, we need to look for observations with Cook's distances that are much larger than those of the other observations (Chatterjee and Hadi, 2015).
@@ -150,7 +152,7 @@ A closely related measure to the Cook's distance is DFITS, which is also frequen
 
 The DFBetas (singular: DFBeta) assess the change in a regression coefficient when a particular observation is deleted. SPSS will calculate DFBetas for every observation. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.
 
-As a rule of thumb, an observation is considered influential if the absolute value of its DFBETAS **exceeds 1** for small to medium datasets and **$\frac{2}{\sqrt(n)}$** for large datasets, where $n$ is the sample size (Kutner, 2005).
+As a rule of thumb, an observation is considered influential if the absolute value of its DFBETAS **exceeds 1** for small to medium datasets and $\frac{2}{\sqrt(n)}$ for large datasets, where $n$ is the sample size (Kutner, 2005).
 
 ## Checking with SPSS
 
@@ -185,7 +187,7 @@ Now, inspect the data view. As we can see from the data view, the last observati
 
 Use RobotGLP.sav to inspect influential observations in this regression model:
 
-Intention to join the green LP = $\beta_0$ Anticipated Guilt + $\beta_1$ Perceived Attractiveness + $\beta_2$ Age + $\beta_3$ Gender + error.
+Intention to join the green LP = $\beta_0$ + $\beta_1$ Anticipated Guilt + $\beta_2$ Perceived Attractiveness + $\beta_3$ Age + $\beta_4$ Gender + error.
 :::
 
 ## References
@@ -193,5 +195,3 @@ Intention to join the green LP = $\beta_0$ Anticipated Guilt + $\beta_1$ Perceiv
 Chatterjee, S., & Hadi, A. S. (2015). Regression analysis by example. John Wiley & Sons.
 
 Kutner, M. H., Nachtsheim, C. J., Neter, J., & Li, W. (2005). Applied linear statistical models. McGraw-hill.
-
-

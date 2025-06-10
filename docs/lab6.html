@@ -362,7 +362,7 @@ Important
 <section id="dfbetas" class="level3" data-number="6.3.2">
 <h3 data-number="6.3.2" class="anchored" data-anchor-id="dfbetas"><span class="header-section-number">6.3.2</span> DFBetas</h3>
 <p>The DFBetas (singular: DFBeta) assess the change in a regression coefficient when a particular observation is deleted. SPSS will calculate DFBetas for every observation. For each observation, the number of DFBetas produced by SPSS corresponds to the number of regression coefficients in the model. For example, in a simple regression model that contains two parameters (intercept and slope), SPSS will calculate two DFBetas, one for the intercept and one for the slope.</p>
-<p>As a rule of thumb, an observation is considered influential if the absolute value of its DFBETAS <strong>exceeds 1</strong> for small to medium datasets and <strong><span class="math inline">\(\frac{2}{\sqrt(n)}\)</span></strong> for large datasets, where <span class="math inline">\(n\)</span> is the sample size (Kutner, 2005).</p>
+<p>As a rule of thumb, an observation is considered influential if the absolute value of its DFBETAS <strong>exceeds 1</strong> for small to medium datasets and <span class="math inline">\(\frac{2}{\sqrt(n)}\)</span> for large datasets, where <span class="math inline">\(n\)</span> is the sample size (Kutner, 2005).</p>
 </section>
 </section>
 <section id="checking-with-spss" class="level2" data-number="6.4">
@@ -417,7 +417,7 @@ Task
 </div>
 <div class="callout-body-container callout-body">
 <p>Use RobotGLP.sav to inspect influential observations in this regression model:</p>
-<p>Intention to join the green LP = <span class="math inline">\(\beta_0\)</span> Anticipated Guilt + <span class="math inline">\(\beta_1\)</span> Perceived Attractiveness + <span class="math inline">\(\beta_2\)</span> Age + <span class="math inline">\(\beta_3\)</span> Gender + error.</p>
+<p>Intention to join the green LP = <span class="math inline">\(\beta_0\)</span> + <span class="math inline">\(\beta_1\)</span> Anticipated Guilt + <span class="math inline">\(\beta_2\)</span> Perceived Attractiveness + <span class="math inline">\(\beta_3\)</span> Age + <span class="math inline">\(\beta_4\)</span> Gender + error.</p>
 </div>
 </div>
 </section>
