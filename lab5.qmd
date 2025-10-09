@@ -48,11 +48,10 @@ Intention to join the green LP \~ Anticipated Guilt + Perceived Attractiveness +
 
 You can read the above expression as a consumer' intention to join the green loyalty program is influenced by the consumer's anticipated of guilt, perceived attractiveness, age, and gender, and some unknown factors represented by an error term. The relationship can be represented by a mathematical expression as below. The names of the variables are shortened.
 
-```{=tex}
 \begin{equation}
 Intent = \beta_0 +  \beta_1 * Guilt + \beta_2 * Attract + \beta_3 * Age + \beta_4 * Gender.
 \end{equation}
-```
+
 where $\beta_0$, $\beta_1$, $\beta_2$, $\beta_3$, and $\beta_4$ are parameters that capture the impact of each of the independent variables on `intention`.
 
 We use regression procedure in SPSS to find out the estimates for all parameters using sample data ($\beta_0$ is just a constant so it is not of our interest).
@@ -213,9 +212,7 @@ You can download the macro from these websites:
 
 ![HeteroskedaticityV3 Macro in the SPSS menu after installation](images/lab5_macro_path.png)
 
-
 ![HeteroskedaticityV3 Macro](images/lab5_macro.png)
-
 
 If you do not manage to install the macro. Do not panic! There is another option without installation -- see below:
 
@@ -243,6 +240,7 @@ You can run the macro without having it installed on your machine. Follow these 
 
 #[2023](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=a8f3e3c0-35c3-477c-950f-afa3007195b2) [2024](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a65c307c-1b84-4d05-a135-b11000598009#)
 ```
+
 [Regression with a categorical iv](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=074239e8-f79d-4ffb-8754-ac9400f4f00f)
 
 [Regression diagnostics](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=5ba02b44-b4d1-4b70-ab45-acb900dc20a4)
