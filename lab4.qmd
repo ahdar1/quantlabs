@@ -112,7 +112,7 @@ What do you think about the potential managerial implications of the above findi
 
 ## Learning Experimentation from Published Research
 
-You can learn experimentation from published research. You can even replicate results of published studies as more authors nowadays made their data publicly available as a way to increase research transparency. Open Science Forum <https://osf.io> facilitates such initiatives. You can click this [link](https://osf.io/j6bns) or this [link](https://osf.io/tjgma/?view_only=d9cb35f5c1984edaac208aa90a072ec5) as examples of such documentation.
+You can learn experimentation from published research. You can even replicate results of published studies as more authors nowadays made their data publicly available as a way to increase research transparency. Open Science Forum <https://osf.io> facilitates such initiatives. You can click this [link](https://osf.io/j6bns) or this [link](https://osf.io/tjgma/?view_only=d9cb35f5c1984edaac208aa90a072ec5) to see examples of such documentation.
 
 ## Video
 
