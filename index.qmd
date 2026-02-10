@@ -37,7 +37,7 @@ Daryanto, Ahmad. (2025), [‘An Introduction to Quantitative Research Methods fo
 
 Any marketing research or quantitative research textbook can be used to complement the core text for your self-learning, in particular, I recommend the following text:
 
--   Malhotra, N.K, Birks, D., and Wills, P. (2012) Marketing Research: An applied orientation, 4^th^ edition, London: Prentice-Hall, Pearson. Other books on marketing research by Malhotra are also useful.
+- Malhotra, NK. (2014), Essentials of Marketing Research, London: Pearson. This is an excellent text that covers both qualitative and quantitative aspects of market research. It is a valuable resource and worth reading. Malhotra has authored several textbooks on marketing research, and this one is among his finest.
 
 -   Sarstedt, Marko and Erik Mooi (2014). A Concise Guide to Market Research. Springer. As the title suggests, this book is concise focusing statistical tests typically conducted in market research. You can read the e-version of the first edition via our library website.
 

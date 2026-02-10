@@ -1,0 +1,310 @@
+---
+title: "Chi-squared distribution"
+---
+
+```{r}
+# Corrected Simulation for Our Actual Data
+# Testing if proportion shopping at Spar is different from some value
+
+# Load required library
+library(ggplot2)
+
+# Our actual data
+actual_no <- 9     # 9 students don't shop at Spar
+actual_yes <- 21   # 21 students shop at Spar
+n_students <- actual_no + actual_yes  # Total = 30
+
+# Null hypothesis proportion (adjust this as needed for Our test)
+# Common tests: p = 0.5 (50%), or p = 0.6 (60%), etc.
+# You need to specify what you're testing against!
+p_null <- 0.5  # Example: testing if proportion = 50%
+
+# Calculate expected frequencies under H₀
+expected_yes <- n_students * p_null
+expected_no <- n_students * (1 - p_null)
+
+# Calculate Our actual chi-square statistic
+actual_chi2 <- (actual_yes - expected_yes)^2 / expected_yes +
+               (actual_no - expected_no)^2 / expected_no
+
+# Theoretical p-value
+p_value_theoretical <- pchisq(actual_chi2, df = 1, lower.tail = FALSE)
+
+# Create data for theoretical chi-square(1) distribution
+x <- seq(0, 10, length.out = 1000)  # Reasonable range for n=30
+y <- dchisq(x, df = 1)
+
+# Create data frame
+theory_data <- data.frame(x = x, y = y)
+
+# Calculate area in tail (for shading)
+tail_data <- data.frame(x = seq(actual_chi2, 10, length.out = 100))
+tail_data$y <- dchisq(tail_data$x, df = 1)
+
+# Plot: Theoretical chi-square(1) distribution
+p <- ggplot(theory_data, aes(x = x, y = y)) +
+  # Plot the theoretical distribution
+  geom_line(color = "darkblue", linewidth = 1.5) +
+  
+  # Shade the tail area (p-value region)
+  geom_area(data = tail_data, aes(x = x, y = y), 
+            fill = "red", alpha = 0.3) +
+  
+  # Add vertical line for Our actual result
+  geom_vline(xintercept = actual_chi2, 
+             color = "red", 
+             linewidth = 1.5, 
+             linetype = "solid") +
+  
+  # Add critical value at α = 0.05
+  geom_vline(xintercept = qchisq(0.95, df = 1), 
+             color = "darkgreen", 
+             linewidth = 1, 
+             linetype = "dashed") +
+  
+  # Add mean of distribution (df = 1)
+  geom_vline(xintercept = 1, 
+             color = "purple", 
+             linewidth = 0.8, 
+             linetype = "dotted") +
+  
+  # Annotations
+  annotate("text", x = actual_chi2, y = 0.05,
+           label = paste("Our study\nχ² =", round(actual_chi2, 2)),
+           color = "red", size = 5, hjust = -0.1, fontface = "bold") +
+  
+  annotate("text", x = qchisq(0.95, df = 1), y = 0.15,
+           label = paste("Critical value\nα = 0.05\nχ² =", 
+                        round(qchisq(0.95, df = 1), 2)),
+           color = "darkgreen", size = 4, hjust = -0.1) +
+  
+  annotate("text", x = 1, y = 0.25,
+           label = paste("Mean = df = 1"),
+           color = "purple", size = 4, hjust = -0.1) +
+  
+  annotate("text", x = -1, y = 0.02,
+           label = paste("p-value =", 
+                        round(p_value_theoretical, 4)),
+           color = "red", size = 5, fontface = "bold") +
+  
+  # Labels and theme
+  labs(title = paste("Chi-square Test: Our Data (", actual_yes, "Yes, ", 
+                    actual_no, "No, n=", n_students, ")"),
+       subtitle = paste("Testing H0: Proportion shopping at Spar =", p_null, "\n",
+                       "Sample proportion =", round(actual_yes/n_students, 3), 
+                       "(", actual_yes, "/", n_students, ")"),
+       x = "Chi-square Value (χ²)",
+       y = "Density",
+       caption = paste("Interpretation: Probability of χ² ≥", round(actual_chi2, 2), 
+                      "if H0 is true")) +
+  
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+    plot.subtitle = element_text(size = 13, hjust = 0.5),
+    plot.caption = element_text(size = 11, hjust = 0),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  ) +
+  
+  xlim(0, 10) +
+  ylim(0, 0.6)
+
+# Print the plot
+print(p)
+
+# Print summary information
+cat("=====================================================\n")
+cat("CHI-SQUARE GOODNESS-OF-FIT TEST\n")
+cat("=====================================================\n\n")
+
+cat("Our DATA:\n")
+cat("- Yes (shop at Spar):", actual_yes, "\n")
+cat("- No (don't shop):   ", actual_no, "\n")
+cat("- Total:             ", n_students, "\n")
+cat("- Sample proportion: ", round(actual_yes/n_students, 3), 
+    " (", actual_yes, "/", n_students, ")\n\n")
+
+cat("NULL HYPOTHESIS:\n")
+cat("- H₀: p =", p_null, "\n")
+cat("- H₁: p ≠", p_null, "\n\n")
+
+cat("EXPECTED FREQUENCIES UNDER H₀:\n")
+cat("- Expected Yes: ", n_students, "×", p_null, "=", expected_yes, "\n")
+cat("- Expected No:  ", n_students, "× (1-", p_null, ") =", expected_no, "\n\n")
+
+cat("CHI-SQUARE CALCULATION:\n")
+cat("1. For 'Yes' category:\n")
+cat("   (O-E)²/E = (", actual_yes, "-", expected_yes, ")²/", expected_yes, 
+    " = ", round((actual_yes - expected_yes)^2, 2), "/", expected_yes, 
+    " = ", round((actual_yes - expected_yes)^2/expected_yes, 3), "\n\n")
+
+cat("2. For 'No' category:\n")
+cat("   (O-E)²/E = (", actual_no, "-", expected_no, ")²/", expected_no, 
+    " = ", round((actual_no - expected_no)^2, 2), "/", expected_no, 
+    " = ", round((actual_no - expected_no)^2/expected_no, 3), "\n\n")
+
+cat("3. Chi-square statistic:\n")
+cat("   χ² = Σ[(O-E)²/E] = ", 
+    round((actual_yes - expected_yes)^2/expected_yes, 3), " + ", 
+    round((actual_no - expected_no)^2/expected_no, 3), " = ", 
+    round(actual_chi2, 4), "\n\n")
+
+cat("SAMPLING DISTRIBUTION:\n")
+cat("- Under H0, χ² follows chi-square distribution with df = 1\n")
+cat("- df = (categories - 1) = (2 - 1) = 1\n\n")
+
+cat("P-VALUE CALCULATION:\n")
+cat("p-value = P(χ² ≥ ", round(actual_chi2, 2), " | df = 1)\n")
+cat("        = ", round(p_value_theoretical, 4), "\n\n")
+
+cat("DECISION AT α = 0.05:\n")
+cat("Critical value: χ²(0.95, df=1) = ", round(qchisq(0.95, df = 1), 3), "\n")
+if(actual_chi2 > qchisq(0.95, df = 1)) {
+  cat("Since ", round(actual_chi2, 2), " > ", round(qchisq(0.95, df = 1), 2), 
+      " (and p = ", round(p_value_theoretical, 4), " < 0.05)\n")
+  cat("→ REJECT H0\n")
+} else {
+  cat("Since ", round(actual_chi2, 2), " ≤ ", round(qchisq(0.95, df = 1), 2), 
+      " (and p = ", round(p_value_theoretical, 4), " ≥ 0.05)\n")
+  cat("→ FAIL TO REJECT H0\n")
+}
+
+cat("\nINTERPRETATION:\n")
+cat("If the true proportion shopping at Spar were ", p_null, ", then the\n")
+cat("probability of getting a sample result as extreme as Ours (or more)\n")
+cat("is ", round(p_value_theoretical * 100, 2), "%.\n")
+
+if(p_value_theoretical < 0.05) {
+  cat("This is statistically significant evidence against H₀.\n")
+} else {
+  cat("This is not statistically significant evidence against H₀.\n")
+}
+cat("=====================================================\n")
+
+# Additional: Show what happens with different null hypotheses
+cat("\nSENSITIVITY ANALYSIS:\n")
+cat("What p-value would you get with different H₀ values?\n")
+cat("-------------------------------------------------\n")
+
+test_props <- c(0.3, 0.4, 0.5, 0.6, 0.7)
+for(prop in test_props) {
+  exp_yes <- n_students * prop
+  exp_no <- n_students * (1-prop)
+  chi2_val <- (actual_yes - exp_yes)^2/exp_yes + (actual_no - exp_no)^2/exp_no
+  p_val <- pchisq(chi2_val, df = 1, lower.tail = FALSE)
+  cat("H₀: p = ", prop, " → χ² = ", round(chi2_val, 2), 
+      ", p = ", round(p_val, 4), 
+      ifelse(p_val < 0.05, " (Reject)", " (Don't reject)"), "\n")
+}
+```
+
+# Zoom in
+
+```{r}
+# ZOOMED PLOT focusing on χ² = 4.8 region
+# Hides the region below x = 2.5 for cleaner visualization
+
+library(ggplot2)
+
+# Your data
+actual_no <- 9     
+actual_yes <- 21   
+n_students <- 30
+p_null <- 0.5
+
+# Calculate chi-square
+expected_yes <- n_students * p_null  # 15
+expected_no <- n_students * (1 - p_null)  # 15
+actual_chi2 <- (actual_yes - expected_yes)^2 / expected_yes +
+               (actual_no - expected_no)^2 / expected_no  # = 4.8
+
+p_value <- pchisq(actual_chi2, df = 1, lower.tail = FALSE)  # 0.0285
+
+# Critical value at α = 0.05
+critical_value <- qchisq(0.95, df = 1)  # 3.841
+
+# Create data - only from x = 2.5 to show the relevant region
+x_start <- 2.5
+x_end <- 8
+x <- seq(x_start, x_end, length.out = 500)
+y <- dchisq(x, df = 1)
+theory_data <- data.frame(x = x, y = y)
+
+# Tail area for shading (from χ² = 4.8 to end)
+tail_data <- data.frame(x = seq(actual_chi2, x_end, length.out = 100))
+tail_data$y <- dchisq(tail_data$x, df = 1)
+
+# Area between critical value and observed χ² (for optional shading)
+middle_data <- data.frame(x = seq(critical_value, actual_chi2, length.out = 100))
+middle_data$y <- dchisq(middle_data$x, df = 1)
+
+# MAIN ZOOMED PLOT
+p_zoom <- ggplot(theory_data, aes(x = x, y = y)) +
+  
+  # Main distribution line (partial curve)
+  geom_line(color = "gray40", linewidth = 2, alpha = 0.8) +
+  
+  # Shade the p-value area (red)
+  geom_area(data = tail_data, aes(x = x, y = y), 
+            fill = "#FF4444", alpha = 0.5) +
+  
+  # Vertical line at critical value (α = 0.05)
+  geom_vline(xintercept = critical_value, 
+             color = "#009900", 
+             linewidth = 1.5,
+             linetype = "dashed") +
+  
+  # Vertical line at observed χ²
+  geom_vline(xintercept = actual_chi2, 
+             color = "#FF0000", 
+             linewidth = 2,
+             linetype = "solid") +
+  
+  # Text labels
+  annotate("label", x = critical_value - 0.1, y = 0.07,
+           label = paste("Critical value\nχ² =", round(critical_value, 3)),
+           color = "#009900", fill = "white", alpha = 0.9,
+           size = 4.5, fontface = "bold", label.padding = unit(0.4, "lines"),
+           hjust = 1) +
+  
+  annotate("label", x = actual_chi2 + 0.1, y = 0.25,
+           label = paste("Your χ²\n=", round(actual_chi2, 2)),
+           color = "#FF0000", fill = "#FFEEEE", alpha = 0.9,
+           size = 5, fontface = "bold", label.padding = unit(0.5, "lines"),
+           hjust = 0) +
+  
+  annotate("label", x = 6, y = 0.1,
+           label = paste("p-value =\n", round(p_value, 4)),
+           color = "#CC0000", fill = "#FFEEEE",
+           size = 5, fontface = "bold", label.padding = unit(0.5, "lines"),
+           hjust = 0.5) +
+  
+  # Labels and theme
+  labs(
+    title = "Zoomed View: Where Does Your χ² = 4.8 Fall?",
+    subtitle = paste("Chi-square distribution (df=1) | Testing H0: p =", p_null, 
+                    " | Sample: ", actual_yes, "/", n_students, " = ", 
+                    round(actual_yes/n_students, 2), sep = ""),
+    x = "χ² Value",
+    y = "Density"
+  ) +
+  
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 18, hjust = 0.5),
+    plot.subtitle = element_text(size = 13, hjust = 0.5, margin = margin(b = 15)),
+    axis.title = element_text(face = "bold", size = 13),
+    axis.text = element_text(size = 12),
+    panel.grid.major = element_line(color = "gray90", linewidth = 0.3),
+    panel.grid.minor = element_blank(),
+    plot.margin = margin(20, 20, 20, 20)
+  ) +
+  
+  # Set zoomed x-axis limits
+  xlim(x_start, x_end) +
+  ylim(0, 0.3)
+
+print(p_zoom)
+```
+
