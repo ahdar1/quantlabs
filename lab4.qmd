@@ -88,10 +88,10 @@ The previous table tests us if there are differences due to type of MBG conditio
 
 The table shows us that `tMBG` is significant (sig-value=0.006\<0.05). This means that respondents have different perception regarding the durability of the products across the three levels of MBG regardless of product types. `tGood` is not significant (sig-value=0.539), which means that respondents have similar perceptions about the product durability regardless of types of MBG offered. You can say, these situations reflect the presence of the main effect of `tMBG` but not `tGood`. **However, the significant main effect is qualified by the significant interaction effect as explained below**.
 
-The most interesting findings from the above table is the sig-value related to the expression tMBG\*tGood, which reflects the interaction effect between `tMBG` and `tGood`. The interaction effect means that the effect of `tMBG` is different across levels of `tGood`. The meaning will become clearer (hopefully!) when you see the plots of the means below.
+The most interesting findings from the above table is the sig-value related to the expression tMBG\*tGood, which reflects the interaction effect between `tMBG` and `tGood`. The interaction effect means that the effect of `tMBG` is different at different levels of `tGood`. The meaning will become clearer (hopefully!) when you see the plots of the means below.
 
 ::: callout-note
-The results showed that there is **significant interaction** between tMBG and tGood. This means
+The results showed that there is a **significant interaction** between tMBG and tGood. This means
 **"The effect of tMBG is different at different levels of tGood, or vice versa."**
 
 :::
