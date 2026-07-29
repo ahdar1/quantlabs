@@ -605,9 +605,35 @@ Understanding Odds and Odds Ratios
 </section>
 <section id="assessing-multicollinearity" class="level3">
 <h3 class="anchored" data-anchor-id="assessing-multicollinearity">Assessing Multicollinearity</h3>
-<p>Multicollinearity can also affect logistic regression.</p>
-<p>The same diagnostic procedures apply.</p>
-<p>Examine correlations among predictors. Inspect VIF values using a linear regression with the same set of predictors.</p>
+<p>Multicollinearity can also affect logistic regression. When predictors are highly correlated with one another, it becomes difficult to estimate their individual effects accurately.</p>
+<p>Unlike multiple regression, SPSS does <strong>not</strong> provide VIF values directly in the Binary Logistic Regression procedure. Therefore, multicollinearity is usually assessed using a separate linear regression with the same set of predictors.</p>
+<p><strong>Method 1: Examine Correlations</strong></p>
+<p>Inspect the correlations among the predictors (<code>Guilt</code>, <code>Attract</code>, <code>Age</code>, and <code>Gender</code>).</p>
+<p>As a rule of thumb:</p>
+<ul>
+<li>Correlation &gt; .90 suggests a serious multicollinearity problem.</li>
+<li>Correlation &gt; .70 warrants further investigation.</li>
+</ul>
+<p><strong>Method 2: Examine VIF Values</strong></p>
+<p>Because SPSS does not report VIF values in Binary Logistic Regression, run a supplementary linear regression.</p>
+<p>Enter any continuous variable as the dependent variable (for example, <code>Guilt</code>).</p>
+<p>Enter the remaining predictors as independent variables.</p>
+<p>Click <strong>Statistics</strong> and select <strong>Collinearity Diagnostics</strong>.</p>
+<p>Inspect the VIF values in the Coefficients table.</p>
+<p>Interpretation: if <span class="math inline">\(\text VIF &gt; 10\)</span>, there is a potentially serious multicollinearity problem.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Although the VIF values are obtained from a linear regression rather than the logistic regression procedure itself, they are based on the relationships among the predictors and therefore provide a useful diagnostic for multicollinearity in logistic regression.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -626,9 +652,6 @@ Task
 <section id="reporting-logistic-regression-results" class="level2">
 <h2 class="anchored" data-anchor-id="reporting-logistic-regression-results">Reporting Logistic Regression Results</h2>
 <p>You can write your report as follows:</p>
-<blockquote class="blockquote">
-<p>A binary logistic regression was conducted to examine factors influencing consumers’ decision to join a green loyalty programme. The model was significant, <span class="math inline">\(\chi^2(4)=473.548\)</span>, (p&lt;.001), indicating that anticipated guilt, perceived attractiveness, age, and gender collectively improved prediction of joining behaviour. The model explained approximately 21.8% of the variation in joining behaviour <span class="math inline">\(\text{Nagelkerke } R^2\)</span> value of 0.218 and correctly classified 88.7% of respondents. Perceived attractiveness ((OR=2.392), (p&lt;.001)) emerged as the strongest predictor, with a one-unit increase in attractiveness associated with approximately 2.39 times greater odds of joining the programme. Anticipated guilt also positively influenced participation ((OR=1.718), (p&lt;.001)), whereas age had a small negative effect ((OR=0.967), (p&lt;.001)). Gender was not a significant predictor ((OR=1.144), (p=.207)).</p>
-</blockquote>
 <blockquote class="blockquote">
 <p>A binary logistic regression was conducted to examine factors influencing consumers’ decision to join a green loyalty programme. The model was significant, <span class="math inline">\(\chi^2(4)=473.548\)</span>, (p&lt;.001), indicating that anticipated guilt, perceived attractiveness, age, and gender collectively improved prediction of joining behaviour. The model explained approximately 21.8% of the variation in joining behaviour (Nagelkerke (R^2=.218)). Overall classification accuracy was 88.7%. However, this result should be interpreted with caution because the model correctly identified 99.1% of consumers who joined the programme but only 9.5% of consumers who did not join. Thus, the model was substantially better at predicting programme participation than non-participation. Perceived attractiveness ((OR=2.392), (p&lt;.001)) emerged as the strongest predictor, followed by anticipated guilt ((OR=1.718), (p&lt;.001)). Age had a small but significant negative effect ((OR=0.967), (p&lt;.001)), whereas gender was not a significant predictor ((OR=1.144), (p=.207)).</p>
 </blockquote>
