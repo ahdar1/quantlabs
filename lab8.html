@@ -401,16 +401,19 @@ Warning
 88.7\% - 88.4\% = 0.3\%
 \]</span></p>
 <p>Thus, although the model is statistically significant, its overall classification accuracy is only marginally better than the baseline model.</p>
-</section>
-<section id="sensitivity-and-specificity" class="level3">
-<h3 class="anchored" data-anchor-id="sensitivity-and-specificity">Sensitivity and Specificity</h3>
-<p>The classification table also provides insight into which group is predicted well.</p>
-<p>The model correctly identifies:</p>
-<ul>
-<li><p><strong>99.1%</strong> of consumers who joined the programme (high sensitivity).</p></li>
-<li><p>Only <strong>9.5%</strong> of consumers who did not join the programme (low specificity).</p></li>
-</ul>
-<p>This indicates that the model is very good at identifying consumers who join the programme but performs poorly at identifying consumers who do not join.</p>
+<!-- 
+### Sensitivity and Specificity
+
+The classification table also provides insight into which group is predicted well.
+
+The model correctly identifies:
+
+- **99.1%** of consumers who joined the programme (high sensitivity).
+
+- Only **9.5%** of consumers who did not join the programme (low specificity).
+
+This indicates that the model is very good at identifying consumers who join the programme but performs poorly at identifying consumers who do not join.
+-->
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,6 +441,12 @@ Warning
 <p>When one outcome category is much larger than the other, overall classification accuracy can be misleading.</p>
 <p>In this dataset, 88.4% of respondents joined the programme. Therefore, a model can achieve high accuracy simply by predicting that everyone joins.</p>
 <p>Always examine the percentage correctly classified for each category, not just the overall percentage.</p>
+<p>For example, The model correctly identifies:</p>
+<ul>
+<li><p><strong>99.1%</strong> of consumers who joined the programme (high sensitivity).</p></li>
+<li><p>Only <strong>9.5%</strong> of consumers who did not join the programme (low specificity).</p></li>
+</ul>
+<p>This indicates that the model is very good at identifying consumers who join the programme but performs poorly at identifying consumers who do not join.</p>
 </div>
 </div>
 </section>
@@ -447,66 +456,182 @@ Warning
 <blockquote class="blockquote">
 <p>The logistic regression model correctly classified 88.7% of respondents. The model correctly identified 99.1% of consumers who joined the green loyalty programme but only 9.5% of consumers who did not join. Compared with the baseline classification accuracy of 88.4%, the model provided only a modest improvement in predictive accuracy.</p>
 </blockquote>
-<p>@@@@@@@@@@</p>
-<p>ObservedPredicted CorrectlyNot Join72%Join80%Overall Accuracy76% This means the model correctly classifies 76% of customers. The classification table provides an intuitive measure of predictive performance.</p>
-<p>Variables in the Equation Which variables matter? images/logistic_coeffs.png Example output:</p>
-<p>VariableBSig.Exp(B)Guilt.55.0011.73Attract.80.0002.23Age-.03.0200.97Gender.12.4201.13 We interpret significance first. Step 1: Statistical Significance Variables are significant when: Plain Text1p &lt; .05Show more lines Therefore: ✅ Guilt significant ✅ Attract significant ✅ Age significant ❌ Gender not significant</p>
-<p>Step 2: Interpret Odds Ratios The Exp(B) column reports the odds ratio. Example 1: Guilt Plain Text1Exp(B) = 1.73Show more lines For every one-unit increase in Guilt, the odds of joining the GLP increase by 73%.</p>
-<p>Example 2: Attractiveness Plain Text1Exp(B) = 2.23Show more lines For every one-unit increase in Attractiveness, the odds of joining the GLP increase by 123%. Attractiveness appears to have a strong effect.</p>
-<p>Example 3: Age Plain Text1Exp(B) = 0.97Show more lines Values below 1 indicate a negative effect. Each additional year of age decreases the odds of joining by approximately 3%.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+<section id="variables-in-the-equation" class="level2">
+<h2 class="anchored" data-anchor-id="variables-in-the-equation">Variables in the Equation</h2>
+<p>Which variables matter?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/logistic_coeffs.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A quick rule: Exp(B) &gt; 1 → Positive effect Exp(B) &lt; 1 → Negative effect Exp(B) = 1 → No effect</p>
-</div>
-</div>
-<p>One-Sided Versus Two-Sided Tests As with ordinary regression: SPSS reports p-values for two-sided tests. If your hypothesis is directional (e.g., Guilt positively influences joining intention), divide the reported p-value by two. Example: Plain Text1SPSS p-value = .020Show more lines One-sided p-value: Plain Text1.020 / 2 = .010Show more lines Since .010 &lt; .05, the relationship is significant in the hypothesised direction.</p>
-<p>Predicting Probabilities Suppose the estimated model is: ln⁡(p1−p)=−2.5+0.55(Guilt)+0.80(Attract)−0.03(Age)+0.12(Gender)() = -2.5 + 0.55(Guilt) + 0.80(Attract) - 0.03(Age) + 0.12(Gender)ln(1−pp​)=−2.5+0.55(Guilt)+0.80(Attract)−0.03(Age)+0.12(Gender) For a customer with:</p>
-<p>Guilt = 5 Attract = 6 Age = 25 Gender = 0</p>
-<p>the log-odds become: 1.851.851.85 The predicted probability is: p=e1.851+e1.85p= {1+e^{1.85}}p=1+e1.85e1.85​ p=0.864p=0.864p=0.864 Therefore: The customer has an 86.4% predicted probability of joining the GLP.</p>
+<section id="step-1-statistical-significance" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-statistical-significance">Step 1: Statistical Significance</h3>
+<p>As with multiple regression, we first inspect the p-values (or Sig.value).</p>
+<p>Variables are significant when: <span class="math inline">\(p &lt; .05\)</span>. As you can see from the table above, all variables are significant except Gender.</p>
+<p>Therefore:</p>
+<ul>
+<li>Higher <code>Guilt</code> scores significantly increase the likelihood of joining the green loyalty programme (B = .541, Exp(B) = 1.718, p &lt; .001).</li>
+<li>Higher <code>Attract</code> scores significantly increase the likelihood of joining the green loyalty programme (B = .872, Exp(B) = 2.392, p &lt; .001).</li>
+<li>Older <code>Age</code> significantly decreases the likelihood of joining the green loyalty programme (B = -.034, Exp(B) = .967, p &lt; .001).</li>
+<li><code>Gender</code> does not significantly influence joining behaviour (B = .135, p = .207).</li>
+</ul>
+<p>Thus, anticipated guilt, perceived attractiveness, and age are significant predictors of joining behaviour, whereas gender is not.</p>
+</section>
+<section id="step-2-interpret-the-odds-ratios" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-interpret-the-odds-ratios">Step 2: Interpret the Odds Ratios</h3>
+<p>The <strong>Exp(B)</strong> column reports the <strong>odds ratios</strong> associated with each predictor.</p>
+<p>An odds ratio tells us how the odds of joining the green loyalty programme change when a predictor increases by one unit, while holding all other variables constant.</p>
+<section id="the-basic-rule" class="level4">
+<h4 class="anchored" data-anchor-id="the-basic-rule">The Basic Rule:</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Exp(B)</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(&gt; 1\)</span></td>
+<td>Odds <strong>increase</strong> (positive relationship)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(= 1\)</span></td>
+<td>No effect</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(&lt; 1\)</span></td>
+<td>Odds <strong>decrease</strong> (negative relationship)</td>
+</tr>
+</tbody>
+</table>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Understanding Odds and Odds Ratios
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Task Using the regression equation reported in SPSS, calculate the probability that a 20-year-old female customer with:</p>
-<p>Guilt = 4 Attract = 5</p>
-<p>will join the GLP.</p>
+<p>Many students find <strong>odds ratios</strong> confusing because they are different from probabilities.</p>
+<section id="probability" class="level4">
+<h4 class="anchored" data-anchor-id="probability">Probability</h4>
+<p>A probability is the chance that an event occurs.</p>
+<p>For example, suppose that out of 100 consumers:</p>
+<ul>
+<li>80 join the green loyalty programme.</li>
+<li>20 do not join the programme.</li>
+</ul>
+<p>The probability of joining is:</p>
+<p><span class="math inline">\(P(\text{Join}) =  = 0.80\)</span> or <strong>80%</strong>.</p>
+</section>
+<section id="odds" class="level4">
+<h4 class="anchored" data-anchor-id="odds">Odds</h4>
+<p>Odds compare the number of times an event occurs with the number of times it does not occur.</p>
+<p>Using the same example:</p>
+<p><span class="math inline">\(\text{Odds}=\frac{p}{1-p}=\frac{80}{100} = \frac{80}{20}=4\)</span></p>
+<p>The odds are therefore <strong>4 to 1</strong>, often written as <strong>4:1</strong>.</p>
+<p>This means that for every consumer who does not join the programme, four consumers join.</p>
+</section>
 </div>
 </div>
-<p>Assessing Multicollinearity Multicollinearity can also affect logistic regression. The same diagnostic procedures apply.</p>
+<p>To calculate percentage change from odds ratio:</p>
+<p><span class="math display">\[
+\text{Percentage Change} = (\text{Exp(B)} - 1) \times 100
+\]</span></p>
+</section>
+<section id="interpretation-of-each-variable" class="level4">
+<h4 class="anchored" data-anchor-id="interpretation-of-each-variable">Interpretation of Each Variable</h4>
+<p><strong>Guilt</strong> (Exp(B) = 1.718, <span class="math inline">\(p &lt; .001\)</span>)</p>
+<blockquote class="blockquote">
+<p>For every <strong>1-unit increase</strong> in Guilt, the <strong>odds of joining</strong> increase by <strong>71.8%</strong>.</p>
+</blockquote>
+<p><strong>Attract</strong> (Exp(B) = 2.392, <span class="math inline">\(p &lt; .001\)</span>)</p>
+<blockquote class="blockquote">
+<p>For every <strong>1-unit increase</strong> in Attract, the <strong>odds of joining</strong> increase by <strong>139.2%</strong>.</p>
+</blockquote>
+<p><strong>Age</strong> (Exp(B) = 0.967, <span class="math inline">\(p &lt; .001\)</span>)</p>
+<blockquote class="blockquote">
+<p>For every <strong>1-year increase</strong> in Age, the <strong>odds of joining</strong> decrease by <strong>3.3%</strong>.</p>
+</blockquote>
+<p><strong>Gender</strong> (Exp(B) = 1.144, <span class="math inline">\(p = .207\)</span>)</p>
+<blockquote class="blockquote">
+<p>Gender does <strong>not</strong> significantly predict joining. The odds ratio is not interpreted due to non-significance.</p>
+</blockquote>
+<p><strong><em>Summary</em></strong></p>
+<ul>
+<li><code>Guilt</code>: significant <strong>positive</strong> predictor (+71.8% odds increase)</li>
+<li><code>Attract</code>: significant <strong>positive</strong> predictor (+139.2% odds increase)</li>
+<li><code>Age</code>: significant <strong>negative</strong> predictor (-3.3% odds decrease per year)</li>
+<li><code>Gender</code>: <strong>not</strong> significant (<span class="math inline">\(p = .207\)</span>)</li>
+</ul>
+</section>
+</section>
+<section id="step-3-which-variable-has-the-strongest-effect" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-which-variable-has-the-strongest-effect">Step 3: Which Variable Has the Strongest Effect?</h3>
+<p>Among the significant predictors:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th style="text-align: right;">Exp(B)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Attract</td>
+<td style="text-align: right;">2.392</td>
+</tr>
+<tr class="even">
+<td>Guilt</td>
+<td style="text-align: right;">1.718</td>
+</tr>
+<tr class="odd">
+<td>Age</td>
+<td style="text-align: right;">0.967</td>
+</tr>
+</tbody>
+</table>
+<p>The results suggest that:</p>
+<ol type="1">
+<li><strong>Perceived attractiveness</strong> is the strongest predictor of joining the programme.</li>
+<li><strong>Anticipated guilt</strong> is the second strongest predictor.</li>
+<li><strong>Age</strong> has a weaker negative effect.</li>
+<li><strong>Gender</strong> does not significantly influence joining behaviour.</li>
+</ol>
+</section>
+<section id="assessing-multicollinearity" class="level3">
+<h3 class="anchored" data-anchor-id="assessing-multicollinearity">Assessing Multicollinearity</h3>
+<p>Multicollinearity can also affect logistic regression.</p>
+<p>The same diagnostic procedures apply.</p>
 <p>Examine correlations among predictors. Inspect VIF values using a linear regression with the same set of predictors.</p>
-<p>Guidelines: Plain Text1Correlation &gt; .70Show more lines Use caution. Plain Text1VIF &gt; 10Show more lines Potential multicollinearity problem. Plain Text1VIF &gt; 5Show more lines Worth investigating.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Task
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Task Run a linear regression using Guilt, Attract, Age, and Gender as predictors. Inspect the VIF values. Does the model suffer from multicollinearity?</p>
+<p>Run a linear regression using Guilt, Attract, Age, and Gender as predictors. Inspect the VIF values. Does the model suffer from multicollinearity?</p>
 </div>
 </div>
 </section>
+</section>
 <section id="reporting-logistic-regression-results" class="level2">
 <h2 class="anchored" data-anchor-id="reporting-logistic-regression-results">Reporting Logistic Regression Results</h2>
-<p>A typical write-up might be:</p>
-<p>A binary logistic regression was conducted to examine factors influencing consumers’ decision to join a green loyalty programme. The model was significant, χ²(4) = 42.61, p &lt; .001, indicating that the predictors collectively improved prediction. The model explained approximately 29% of variation in joining behaviour (Nagelkerke R² = .29) and correctly classified 76% of respondents. Perceived attractiveness (OR = 2.23, p &lt; .001), anticipated guilt (OR = 1.73, p = .001), and age (OR = 0.97, p = .020) significantly influenced joining behaviour. Gender was not significant (p = .420).</p>
+<p>You can write your report as follows:</p>
+<blockquote class="blockquote">
+<p>A binary logistic regression was conducted to examine factors influencing consumers’ decision to join a green loyalty programme. The model was significant, <span class="math inline">\(\chi^2(4)=473.548\)</span>, (p&lt;.001), indicating that anticipated guilt, perceived attractiveness, age, and gender collectively improved prediction of joining behaviour. The model explained approximately 21.8% of the variation in joining behaviour <span class="math inline">\(\text{Nagelkerke } R^2\)</span> value of 0.218 and correctly classified 88.7% of respondents. Perceived attractiveness ((OR=2.392), (p&lt;.001)) emerged as the strongest predictor, with a one-unit increase in attractiveness associated with approximately 2.39 times greater odds of joining the programme. Anticipated guilt also positively influenced participation ((OR=1.718), (p&lt;.001)), whereas age had a small negative effect ((OR=0.967), (p&lt;.001)). Gender was not a significant predictor ((OR=1.144), (p=.207)).</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>A binary logistic regression was conducted to examine factors influencing consumers’ decision to join a green loyalty programme. The model was significant, <span class="math inline">\(\chi^2(4)=473.548\)</span>, (p&lt;.001), indicating that anticipated guilt, perceived attractiveness, age, and gender collectively improved prediction of joining behaviour. The model explained approximately 21.8% of the variation in joining behaviour (Nagelkerke (R^2=.218)). Overall classification accuracy was 88.7%. However, this result should be interpreted with caution because the model correctly identified 99.1% of consumers who joined the programme but only 9.5% of consumers who did not join. Thus, the model was substantially better at predicting programme participation than non-participation. Perceived attractiveness ((OR=2.392), (p&lt;.001)) emerged as the strongest predictor, followed by anticipated guilt ((OR=1.718), (p&lt;.001)). Age had a small but significant negative effect ((OR=0.967), (p&lt;.001)), whereas gender was not a significant predictor ((OR=1.144), (p=.207)).</p>
+</blockquote>
 </section>
 </section>
 
